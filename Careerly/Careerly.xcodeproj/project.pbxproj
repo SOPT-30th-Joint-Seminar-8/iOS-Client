@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23246F592833BF16004A46C5 /* UITextField++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23246F582833BF16004A46C5 /* UITextField++.swift */; };
+		234C4936282FD50B009747B2 /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234C4935282FD50B009747B2 /* Post.storyboard */; };
+		2352AEB12832ADAA0043D932 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2352AEB02832ADAA0043D932 /* PostViewController.swift */; };
+		2367D7BC2833DC630085CA21 /* PostDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2367D7BB2833DC630085CA21 /* PostDetail.storyboard */; };
+		2367D7BE2833DC790085CA21 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2367D7BD2833DC790085CA21 /* PostDetailViewController.swift */; };
+		23E71EC02834027400D638B5 /* UIColor++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E71EBF2834027400D638B5 /* UIColor++.swift */; };
 		CE53999A282FC5F90037512F /* Guide.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE539999282FC5F90037512F /* Guide.txt */; };
 		CE53999E282FC64D0037512F /* Base.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE53999D282FC64D0037512F /* Base.txt */; };
 		CE5399A0282FC6640037512F /* Utils.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE53999F282FC6640037512F /* Utils.txt */; };
@@ -28,6 +34,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23246F582833BF16004A46C5 /* UITextField++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField++.swift"; sourceTree = "<group>"; };
+		234C4935282FD50B009747B2 /* Post.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
+		2352AEB02832ADAA0043D932 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		2367D7BB2833DC630085CA21 /* PostDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostDetail.storyboard; sourceTree = "<group>"; };
+		2367D7BD2833DC790085CA21 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		23E71EBF2834027400D638B5 /* UIColor++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor++.swift"; sourceTree = "<group>"; };
 		CE539999282FC5F90037512F /* Guide.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Guide.txt; sourceTree = "<group>"; };
 		CE53999D282FC64D0037512F /* Base.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Base.txt; sourceTree = "<group>"; };
 		CE53999F282FC6640037512F /* Utils.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Utils.txt; sourceTree = "<group>"; };
@@ -61,6 +73,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		234C4932282FD494009747B2 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				234C4935282FD50B009747B2 /* Post.storyboard */,
+				2352AEB02832ADAA0043D932 /* PostViewController.swift */,
+				2367D7BB2833DC630085CA21 /* PostDetail.storyboard */,
+				2367D7BD2833DC790085CA21 /* PostDetailViewController.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
 		CE97F0A22832C0AD00A4C287 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +141,7 @@
 		CECC9394282FBDDB00432906 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				234C4932282FD494009747B2 /* Post */,
 				CECC939C282FBE8600432906 /* Guide */,
 				CECC939B282FBE8200432906 /* Home */,
 				CECC939A282FBE7D00432906 /* Base */,
@@ -153,6 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				CE5399A5282FC68B0037512F /* Extensions.txt */,
+				23246F582833BF16004A46C5 /* UITextField++.swift */,
+				23E71EBF2834027400D638B5 /* UIColor++.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -310,11 +336,13 @@
 				CEF961B32832C17700A06B16 /* NotificationTab.storyboard in Resources */,
 				CEF961B52832C18100A06B16 /* ProfileTab.storyboard in Resources */,
 				CE5399A0282FC6640037512F /* Utils.txt in Resources */,
+				234C4936282FD50B009747B2 /* Post.storyboard in Resources */,
 				CECC938C282FBDC600432906 /* LaunchScreen.storyboard in Resources */,
 				CE97F0A12832C07700A4C287 /* HomeTab.storyboard in Resources */,
 				CECC9389282FBDC600432906 /* Assets.xcassets in Resources */,
 				CECC9387282FBDC500432906 /* Main.storyboard in Resources */,
 				CEF961AF2832C11C00A06B16 /* TabBar.storyboard in Resources */,
+				2367D7BC2833DC630085CA21 /* PostDetail.storyboard in Resources */,
 				CE5399A2282FC6740037512F /* Literal.txt in Resources */,
 				CEF961B12832C14700A06B16 /* SearchTab.storyboard in Resources */,
 				CE5399A8282FC69D0037512F /* Models.txt in Resources */,
@@ -330,6 +358,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23246F592833BF16004A46C5 /* UITextField++.swift in Sources */,
+				2367D7BE2833DC790085CA21 /* PostDetailViewController.swift in Sources */,
+				2352AEB12832ADAA0043D932 /* PostViewController.swift in Sources */,
+				23E71EC02834027400D638B5 /* UIColor++.swift in Sources */,
 				CECC9384282FBDC500432906 /* ViewController.swift in Sources */,
 				CECC9380282FBDC500432906 /* AppDelegate.swift in Sources */,
 				CECC9382282FBDC500432906 /* SceneDelegate.swift in Sources */,
@@ -479,6 +511,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 272QNH7NKN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Careerly/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -506,6 +539,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 272QNH7NKN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Careerly/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
