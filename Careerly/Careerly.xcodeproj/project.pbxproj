@@ -8,30 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		CE53999A282FC5F90037512F /* Guide.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE539999282FC5F90037512F /* Guide.txt */; };
-		CE53999C282FC6400037512F /* Home.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE53999B282FC6400037512F /* Home.txt */; };
 		CE53999E282FC64D0037512F /* Base.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE53999D282FC64D0037512F /* Base.txt */; };
 		CE5399A0282FC6640037512F /* Utils.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE53999F282FC6640037512F /* Utils.txt */; };
 		CE5399A2282FC6740037512F /* Literal.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE5399A1282FC6740037512F /* Literal.txt */; };
 		CE5399A4282FC67F0037512F /* Network.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE5399A3282FC67F0037512F /* Network.txt */; };
 		CE5399A6282FC68B0037512F /* Extensions.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE5399A5282FC68B0037512F /* Extensions.txt */; };
 		CE5399A8282FC69D0037512F /* Models.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE5399A7282FC69D0037512F /* Models.txt */; };
+		CE97F0A12832C07700A4C287 /* HomeTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE97F0A02832C07700A4C287 /* HomeTab.storyboard */; };
 		CECC9380282FBDC500432906 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC937F282FBDC500432906 /* AppDelegate.swift */; };
 		CECC9382282FBDC500432906 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC9381282FBDC500432906 /* SceneDelegate.swift */; };
 		CECC9384282FBDC500432906 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC9383282FBDC500432906 /* ViewController.swift */; };
 		CECC9387282FBDC500432906 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECC9385282FBDC500432906 /* Main.storyboard */; };
 		CECC9389282FBDC600432906 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CECC9388282FBDC600432906 /* Assets.xcassets */; };
 		CECC938C282FBDC600432906 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECC938A282FBDC600432906 /* LaunchScreen.storyboard */; };
+		CEF961AF2832C11C00A06B16 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF961AE2832C11C00A06B16 /* TabBar.storyboard */; };
+		CEF961B12832C14700A06B16 /* SearchTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF961B02832C14700A06B16 /* SearchTab.storyboard */; };
+		CEF961B32832C17700A06B16 /* NotificationTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF961B22832C17700A06B16 /* NotificationTab.storyboard */; };
+		CEF961B52832C18100A06B16 /* ProfileTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF961B42832C18100A06B16 /* ProfileTab.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE539999282FC5F90037512F /* Guide.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Guide.txt; sourceTree = "<group>"; };
-		CE53999B282FC6400037512F /* Home.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Home.txt; sourceTree = "<group>"; };
 		CE53999D282FC64D0037512F /* Base.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Base.txt; sourceTree = "<group>"; };
 		CE53999F282FC6640037512F /* Utils.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Utils.txt; sourceTree = "<group>"; };
 		CE5399A1282FC6740037512F /* Literal.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Literal.txt; sourceTree = "<group>"; };
 		CE5399A3282FC67F0037512F /* Network.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Network.txt; sourceTree = "<group>"; };
 		CE5399A5282FC68B0037512F /* Extensions.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Extensions.txt; sourceTree = "<group>"; };
 		CE5399A7282FC69D0037512F /* Models.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Models.txt; sourceTree = "<group>"; };
+		CE97F0A02832C07700A4C287 /* HomeTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTab.storyboard; sourceTree = "<group>"; };
 		CECC937C282FBDC500432906 /* Careerly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Careerly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECC937F282FBDC500432906 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CECC9381282FBDC500432906 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +44,10 @@
 		CECC9388282FBDC600432906 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CECC938B282FBDC600432906 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CECC938D282FBDC600432906 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEF961AE2832C11C00A06B16 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		CEF961B02832C14700A06B16 /* SearchTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchTab.storyboard; sourceTree = "<group>"; };
+		CEF961B22832C17700A06B16 /* NotificationTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotificationTab.storyboard; sourceTree = "<group>"; };
+		CEF961B42832C18100A06B16 /* ProfileTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileTab.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE97F0A22832C0AD00A4C287 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				CEF961B62832C6A000A06B16 /* HomeTab */,
+				CEF961B72832C6A600A06B16 /* SearchTab */,
+				CEF961B82832C6B000A06B16 /* NotificationTab */,
+				CEF961B92832C6BA00A06B16 /* ProfileTab */,
+				CEF961AE2832C11C00A06B16 /* TabBar.storyboard */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		CECC9373282FBDC500432906 = {
 			isa = PBXGroup;
 			children = (
@@ -156,7 +176,7 @@
 		CECC939B282FBE8200432906 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				CE53999B282FC6400037512F /* Home.txt */,
+				CE97F0A22832C0AD00A4C287 /* TabBar */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -193,6 +213,38 @@
 				CECC938A282FBDC600432906 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CEF961B62832C6A000A06B16 /* HomeTab */ = {
+			isa = PBXGroup;
+			children = (
+				CE97F0A02832C07700A4C287 /* HomeTab.storyboard */,
+			);
+			path = HomeTab;
+			sourceTree = "<group>";
+		};
+		CEF961B72832C6A600A06B16 /* SearchTab */ = {
+			isa = PBXGroup;
+			children = (
+				CEF961B02832C14700A06B16 /* SearchTab.storyboard */,
+			);
+			path = SearchTab;
+			sourceTree = "<group>";
+		};
+		CEF961B82832C6B000A06B16 /* NotificationTab */ = {
+			isa = PBXGroup;
+			children = (
+				CEF961B22832C17700A06B16 /* NotificationTab.storyboard */,
+			);
+			path = NotificationTab;
+			sourceTree = "<group>";
+		};
+		CEF961B92832C6BA00A06B16 /* ProfileTab */ = {
+			isa = PBXGroup;
+			children = (
+				CEF961B42832C18100A06B16 /* ProfileTab.storyboard */,
+			);
+			path = ProfileTab;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,13 +306,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE5399A6282FC68B0037512F /* Extensions.txt in Resources */,
-				CE53999C282FC6400037512F /* Home.txt in Resources */,
 				CE53999A282FC5F90037512F /* Guide.txt in Resources */,
+				CEF961B32832C17700A06B16 /* NotificationTab.storyboard in Resources */,
+				CEF961B52832C18100A06B16 /* ProfileTab.storyboard in Resources */,
 				CE5399A0282FC6640037512F /* Utils.txt in Resources */,
 				CECC938C282FBDC600432906 /* LaunchScreen.storyboard in Resources */,
+				CE97F0A12832C07700A4C287 /* HomeTab.storyboard in Resources */,
 				CECC9389282FBDC600432906 /* Assets.xcassets in Resources */,
 				CECC9387282FBDC500432906 /* Main.storyboard in Resources */,
+				CEF961AF2832C11C00A06B16 /* TabBar.storyboard in Resources */,
 				CE5399A2282FC6740037512F /* Literal.txt in Resources */,
+				CEF961B12832C14700A06B16 /* SearchTab.storyboard in Resources */,
 				CE5399A8282FC69D0037512F /* Models.txt in Resources */,
 				CE5399A4282FC67F0037512F /* Network.txt in Resources */,
 				CE53999E282FC64D0037512F /* Base.txt in Resources */,
