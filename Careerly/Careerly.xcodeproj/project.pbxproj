@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE05BC752835240B007D3CA3 /* FeedTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE05BC732835240B007D3CA3 /* FeedTVC.swift */; };
+		CE05BC762835240B007D3CA3 /* FeedTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE05BC742835240B007D3CA3 /* FeedTVC.xib */; };
 		CE4CDE702833E16C002BBB4D /* HomeTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4CDE6F2833E16C002BBB4D /* HomeTabVC.swift */; };
 		CE4CDE732833F783002BBB4D /* TableViewHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4CDE722833F783002BBB4D /* TableViewHeaderView.xib */; };
 		CE4CDE762833F97C002BBB4D /* TableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4CDE752833F97C002BBB4D /* TableViewHeaderView.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE05BC732835240B007D3CA3 /* FeedTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTVC.swift; sourceTree = "<group>"; };
+		CE05BC742835240B007D3CA3 /* FeedTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTVC.xib; sourceTree = "<group>"; };
 		CE4CDE6F2833E16C002BBB4D /* HomeTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabVC.swift; sourceTree = "<group>"; };
 		CE4CDE722833F783002BBB4D /* TableViewHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewHeaderView.xib; sourceTree = "<group>"; };
 		CE4CDE752833F97C002BBB4D /* TableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHeaderView.swift; sourceTree = "<group>"; };
@@ -67,9 +71,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE05BC7228352177007D3CA3 /* FeedTVC */ = {
+			isa = PBXGroup;
+			children = (
+				CE05BC732835240B007D3CA3 /* FeedTVC.swift */,
+				CE05BC742835240B007D3CA3 /* FeedTVC.xib */,
+			);
+			path = FeedTVC;
+			sourceTree = "<group>";
+		};
 		CE4CDE712833F552002BBB4D /* TableViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				CE05BC7228352177007D3CA3 /* FeedTVC */,
 				CE4CDE742833F944002BBB4D /* TableViewHeader */,
 			);
 			path = TableViewComponents;
@@ -341,6 +355,7 @@
 				CECC9387282FBDC500432906 /* Main.storyboard in Resources */,
 				CEF961AF2832C11C00A06B16 /* TabBar.storyboard in Resources */,
 				CE5399A2282FC6740037512F /* Literal.txt in Resources */,
+				CE05BC762835240B007D3CA3 /* FeedTVC.xib in Resources */,
 				CEF961B12832C14700A06B16 /* SearchTab.storyboard in Resources */,
 				CE5399A8282FC69D0037512F /* Models.txt in Resources */,
 				CE5399A4282FC67F0037512F /* Network.txt in Resources */,
@@ -361,6 +376,7 @@
 				CECC9380282FBDC500432906 /* AppDelegate.swift in Sources */,
 				CECC9382282FBDC500432906 /* SceneDelegate.swift in Sources */,
 				CE4CDE702833E16C002BBB4D /* HomeTabVC.swift in Sources */,
+				CE05BC752835240B007D3CA3 /* FeedTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
