@@ -66,11 +66,19 @@ extension HomeTabVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row % 3 == 0 && indexPath.row > 0{
-            guard let popularProfileCell = tableView.dequeueReusableCell(withIdentifier: PopularProfileTVC.identifier, for: indexPath) as? PopularProfileTVC else { return UITableViewCell()}
+        if indexPath.row % 3 == 0 && indexPath.row > 0 {
+            guard let popularProfileCell = tableView.dequeueReusableCell(
+                withIdentifier: PopularProfileTVC.identifier,
+                for: indexPath) as? PopularProfileTVC
+            else { return UITableViewCell()}
+            
             return popularProfileCell
         }
-        guard let feedCell = tableView.dequeueReusableCell(withIdentifier: FeedTVC.identifier, for: indexPath) as? FeedTVC else { return UITableViewCell()}
+        guard let feedCell = tableView.dequeueReusableCell(
+            withIdentifier: FeedTVC.identifier,
+            for: indexPath) as? FeedTVC
+        else { return UITableViewCell()}
+        
         return feedCell
     }
 }

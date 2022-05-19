@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관심 분야의 인기 프로필" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtz-at-Li6">
-                        <rect key="frame" x="18" y="30" width="132" height="16"/>
+                        <rect key="frame" x="18" y="30" width="132" height="11"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -32,17 +32,17 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ab4-pC-gqh">
-                        <rect key="frame" x="9" y="58" width="369" height="1"/>
+                        <rect key="frame" x="9" y="53" width="369" height="1"/>
                         <color key="backgroundColor" name="Ltgray2"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="mS2-Jg-llj"/>
                         </constraints>
                     </view>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="yo7-BN-MtW">
-                        <rect key="frame" x="18" y="73" width="372" height="270"/>
+                        <rect key="frame" x="15" y="68" width="375" height="275"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="270" id="G6c-AP-Ek2"/>
+                            <constraint firstAttribute="height" constant="275" id="G6c-AP-Ek2"/>
                         </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pab-Lb-RlP">
                             <size key="itemSize" width="128" height="128"/>
@@ -54,7 +54,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="ab4-pC-gqh" firstAttribute="top" secondItem="vtz-at-Li6" secondAttribute="bottom" constant="12" id="Bmr-MY-tVC"/>
-                    <constraint firstItem="yo7-BN-MtW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="DzI-cT-2DI"/>
+                    <constraint firstItem="yo7-BN-MtW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="DzI-cT-2DI"/>
                     <constraint firstItem="vtz-at-Li6" firstAttribute="top" secondItem="RBV-ID-s6O" secondAttribute="bottom" constant="18" id="Gs6-kQ-58t"/>
                     <constraint firstItem="ab4-pC-gqh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="9" id="PYJ-b0-CzQ"/>
                     <constraint firstAttribute="bottom" secondItem="yo7-BN-MtW" secondAttribute="bottom" constant="14" id="U9k-he-eFI"/>
@@ -68,6 +68,9 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="collectionView" destination="yo7-BN-MtW" id="Ibe-S4-GOW"/>
+            </connections>
             <point key="canvasLocation" x="132" y="126"/>
         </tableViewCell>
     </objects>
