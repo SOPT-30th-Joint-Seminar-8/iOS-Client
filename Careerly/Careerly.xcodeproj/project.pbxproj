@@ -35,6 +35,11 @@
 		F2B4860E28389E4000473AD9 /* setImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B4860D28389E4000473AD9 /* setImage.swift */; };
 		F2B4861028389E6700473AD9 /* addSubViewFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B4860F28389E6700473AD9 /* addSubViewFromNib.swift */; };
 		F2B4861228389EB000473AD9 /* keyboard+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B4861128389EB000473AD9 /* keyboard+UIViewController.swift */; };
+		F2B486142838A1D800473AD9 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B486132838A1D800473AD9 /* APIConstants.swift */; };
+		F2B486162838A25700473AD9 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B486152838A25700473AD9 /* NetworkResult.swift */; };
+		F2B486182838A2BC00473AD9 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B486172838A2BC00473AD9 /* PostModel.swift */; };
+		F2B4861A2838A2C700473AD9 /* DetailPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B486192838A2C700473AD9 /* DetailPostModel.swift */; };
+		F2B4861C2838A32E00473AD9 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B4861B2838A32E00473AD9 /* PostService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +75,11 @@
 		F2B4860D28389E4000473AD9 /* setImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setImage.swift; sourceTree = "<group>"; };
 		F2B4860F28389E6700473AD9 /* addSubViewFromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addSubViewFromNib.swift; sourceTree = "<group>"; };
 		F2B4861128389EB000473AD9 /* keyboard+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "keyboard+UIViewController.swift"; sourceTree = "<group>"; };
+		F2B486132838A1D800473AD9 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		F2B486152838A25700473AD9 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		F2B486172838A2BC00473AD9 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		F2B486192838A2C700473AD9 /* DetailPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostModel.swift; sourceTree = "<group>"; };
+		F2B4861B2838A32E00473AD9 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +100,6 @@
 				33D0E166BB4C6CEB555F8C83 /* Pods-Careerly.debug.xcconfig */,
 				90F8B5F379E47A6D2CDBD0A5 /* Pods-Careerly.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -189,6 +198,11 @@
 			isa = PBXGroup;
 			children = (
 				CE5399A3282FC67F0037512F /* Network.txt */,
+				F2B486132838A1D800473AD9 /* APIConstants.swift */,
+				F2B486152838A25700473AD9 /* NetworkResult.swift */,
+				F2B486172838A2BC00473AD9 /* PostModel.swift */,
+				F2B486192838A2C700473AD9 /* DetailPostModel.swift */,
+				F2B4861B2838A32E00473AD9 /* PostService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -446,11 +460,16 @@
 				CECC9384282FBDC500432906 /* ViewController.swift in Sources */,
 				F2B4861028389E6700473AD9 /* addSubViewFromNib.swift in Sources */,
 				CE4CDE762833F97C002BBB4D /* TableViewHeaderView.swift in Sources */,
+				F2B4861C2838A32E00473AD9 /* PostService.swift in Sources */,
+				F2B486182838A2BC00473AD9 /* PostModel.swift in Sources */,
 				F2B4860C28389E2900473AD9 /* pressAcrtion.swift in Sources */,
 				F2B4860E28389E4000473AD9 /* setImage.swift in Sources */,
+				F2B4861A2838A2C700473AD9 /* DetailPostModel.swift in Sources */,
 				F2B4861228389EB000473AD9 /* keyboard+UIViewController.swift in Sources */,
+				F2B486162838A25700473AD9 /* NetworkResult.swift in Sources */,
 				F2B4860828389DFF00473AD9 /* applyShadow.swift in Sources */,
 				F2B4860A28389E1700473AD9 /* makeAlert.swift in Sources */,
+				F2B486142838A1D800473AD9 /* APIConstants.swift in Sources */,
 				CECC9380282FBDC500432906 /* AppDelegate.swift in Sources */,
 				CECC9382282FBDC500432906 /* SceneDelegate.swift in Sources */,
 				CE4CDE702833E16C002BBB4D /* HomeTabVC.swift in Sources */,
