@@ -28,6 +28,12 @@
 		CEF961B12832C14700A06B16 /* SearchTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF961B02832C14700A06B16 /* SearchTab.storyboard */; };
 		CEF961B32832C17700A06B16 /* NotificationTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF961B22832C17700A06B16 /* NotificationTab.storyboard */; };
 		CEF961B52832C18100A06B16 /* ProfileTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF961B42832C18100A06B16 /* ProfileTab.storyboard */; };
+		F2B4860828389DFF00473AD9 /* applyShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B4860728389DFF00473AD9 /* applyShadow.swift */; };
+		F2B4860A28389E1700473AD9 /* makeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B4860928389E1700473AD9 /* makeAlert.swift */; };
+		F2B4860C28389E2900473AD9 /* pressAcrtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B4860B28389E2900473AD9 /* pressAcrtion.swift */; };
+		F2B4860E28389E4000473AD9 /* setImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B4860D28389E4000473AD9 /* setImage.swift */; };
+		F2B4861028389E6700473AD9 /* addSubViewFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B4860F28389E6700473AD9 /* addSubViewFromNib.swift */; };
+		F2B4861228389EB000473AD9 /* keyboard+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B4861128389EB000473AD9 /* keyboard+UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +60,12 @@
 		CEF961B02832C14700A06B16 /* SearchTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchTab.storyboard; sourceTree = "<group>"; };
 		CEF961B22832C17700A06B16 /* NotificationTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotificationTab.storyboard; sourceTree = "<group>"; };
 		CEF961B42832C18100A06B16 /* ProfileTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileTab.storyboard; sourceTree = "<group>"; };
+		F2B4860728389DFF00473AD9 /* applyShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = applyShadow.swift; sourceTree = "<group>"; };
+		F2B4860928389E1700473AD9 /* makeAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeAlert.swift; sourceTree = "<group>"; };
+		F2B4860B28389E2900473AD9 /* pressAcrtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pressAcrtion.swift; sourceTree = "<group>"; };
+		F2B4860D28389E4000473AD9 /* setImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setImage.swift; sourceTree = "<group>"; };
+		F2B4860F28389E6700473AD9 /* addSubViewFromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addSubViewFromNib.swift; sourceTree = "<group>"; };
+		F2B4861128389EB000473AD9 /* keyboard+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "keyboard+UIViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				CE5399A5282FC68B0037512F /* Extensions.txt */,
+				F2B4860F28389E6700473AD9 /* addSubViewFromNib.swift */,
+				F2B4861128389EB000473AD9 /* keyboard+UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -225,6 +239,10 @@
 			isa = PBXGroup;
 			children = (
 				CE53999F282FC6640037512F /* Utils.txt */,
+				F2B4860728389DFF00473AD9 /* applyShadow.swift */,
+				F2B4860928389E1700473AD9 /* makeAlert.swift */,
+				F2B4860B28389E2900473AD9 /* pressAcrtion.swift */,
+				F2B4860D28389E4000473AD9 /* setImage.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -357,7 +375,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CECC9384282FBDC500432906 /* ViewController.swift in Sources */,
+				F2B4861028389E6700473AD9 /* addSubViewFromNib.swift in Sources */,
 				CE4CDE762833F97C002BBB4D /* TableViewHeaderView.swift in Sources */,
+				F2B4860C28389E2900473AD9 /* pressAcrtion.swift in Sources */,
+				F2B4860E28389E4000473AD9 /* setImage.swift in Sources */,
+				F2B4861228389EB000473AD9 /* keyboard+UIViewController.swift in Sources */,
+				F2B4860828389DFF00473AD9 /* applyShadow.swift in Sources */,
+				F2B4860A28389E1700473AD9 /* makeAlert.swift in Sources */,
 				CECC9380282FBDC500432906 /* AppDelegate.swift in Sources */,
 				CECC9382282FBDC500432906 /* SceneDelegate.swift in Sources */,
 				CE4CDE702833E16C002BBB4D /* HomeTabVC.swift in Sources */,
