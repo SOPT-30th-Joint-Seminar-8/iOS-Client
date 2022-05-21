@@ -45,6 +45,7 @@
 		F2B4861A2838A2C700473AD9 /* DetailPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B486192838A2C700473AD9 /* DetailPostModel.swift */; };
 		F2B4861C2838A32E00473AD9 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B4861B2838A32E00473AD9 /* PostService.swift */; };
 		F2B4861E2838A40B00473AD9 /* makeVibrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B4861D2838A40B00473AD9 /* makeVibrate.swift */; };
+		F2B486202838B01D00473AD9 /* dateTime+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B4861F2838B01D00473AD9 /* dateTime+String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		F2B486192838A2C700473AD9 /* DetailPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostModel.swift; sourceTree = "<group>"; };
 		F2B4861B2838A32E00473AD9 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		F2B4861D2838A40B00473AD9 /* makeVibrate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeVibrate.swift; sourceTree = "<group>"; };
+		F2B4861F2838B01D00473AD9 /* dateTime+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "dateTime+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +270,7 @@
 			children = (
 				CE5399A5282FC68B0037512F /* Extensions.txt */,
 				F2B4861128389EB000473AD9 /* keyboard+UIViewController.swift */,
+				F2B4861F2838B01D00473AD9 /* dateTime+String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				CECC9382282FBDC500432906 /* SceneDelegate.swift in Sources */,
 				CE4CDE702833E16C002BBB4D /* HomeTabVC.swift in Sources */,
 				CE05BC752835240B007D3CA3 /* FeedTVC.swift in Sources */,
+				F2B486202838B01D00473AD9 /* dateTime+String.swift in Sources */,
 				F2B4861E2838A40B00473AD9 /* makeVibrate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
