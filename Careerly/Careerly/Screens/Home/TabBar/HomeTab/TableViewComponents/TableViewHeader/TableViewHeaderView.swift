@@ -17,5 +17,4 @@ final class TableViewHeaderView: UIView {
         // feed 작성 화면으로 이동
         print("Debug: Tapped")
     }
-    
 }
