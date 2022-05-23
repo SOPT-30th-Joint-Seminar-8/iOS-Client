@@ -13,6 +13,7 @@ class PostDetailViewController: UIViewController {
     @IBOutlet weak var submitBtn: UIButton!
     var postText : String?
     @IBOutlet weak var postTableView: UITableView!
+    var commentData : [PostCommentModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,18 +21,23 @@ class PostDetailViewController: UIViewController {
         setUpTextField()
         registerNib()
         setUpDelegate()
-        postTableView.rowHeight = UITableView.automaticDimension
-        postTableView.estimatedRowHeight = 500
+        setTableView()
     }
     
     private func registerNib(){
         let postNib = UINib(nibName: PostDetailTVC.identifier, bundle: nil)
         postTableView.register(postNib, forCellReuseIdentifier: PostDetailTVC.identifier)
+        let commentNib = UINib(nibName: PostCommentTVC.identifier, bundle: nil)
+        postTableView.register(commentNib, forCellReuseIdentifier: PostCommentTVC.identifier)
     }
     
     private func setUpDelegate(){
-        postTableView.delegate = self
         postTableView.dataSource = self
+    }
+    
+    private func setTableView(){
+        postTableView.rowHeight = UITableView.automaticDimension
+        postTableView.estimatedRowHeight = 500
     }
     
     private func configureUI(){
@@ -49,23 +55,37 @@ class PostDetailViewController: UIViewController {
         submitBtn.backgroundColor = UIColor(rgb: commentTextField.hasText ? 0xED6653 :0xEFC3BC)
     }
 
-}
-
-extension PostDetailViewController: UITableViewDelegate{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    @IBAction func submitBtnTap(_ sender: Any) {
+        guard let commentText = commentTextField.text else { return }
+        commentData.append(PostCommentModel(comment: commentText))
+        commentTextField.text?.removeAll()
+        postTableView.reloadData()
     }
+    
 }
 
 extension PostDetailViewController: UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return section == 0 ? 1 : commentData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = postTableView.dequeueReusableCell(withIdentifier: PostDetailTVC.identifier, for: indexPath) as? PostDetailTVC else { return UITableViewCell() }
-        cell.setData(PostModel(postText: "내 이름은 이소진이다~!!"))
-        return cell
+        switch indexPath.section{
+        case 0:
+            guard let cell = postTableView.dequeueReusableCell(withIdentifier: PostDetailTVC.identifier, for: indexPath) as? PostDetailTVC else { return UITableViewCell() }
+            cell.setData(PostModel(postText: "내 이름은 이소진이다~!!"))
+            return cell
+        case 1:
+            guard let cell = postTableView.dequeueReusableCell(withIdentifier: PostCommentTVC.identifier, for: indexPath) as? PostCommentTVC else { return UITableViewCell() }
+            cell.setData(commentData[indexPath.row])
+            return cell
+        default:
+            return UITableViewCell()
+        }
     }
     
 }

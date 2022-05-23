@@ -40,11 +40,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4E9-id-JAW">
                                 <rect key="frame" x="0.0" y="758" width="390" height="86"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="게시글에 대해 이야기를 나눠보세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VeA-7D-0MY">
-                                        <rect key="frame" x="17" y="16" width="294" height="35"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="게시글에 대해 이야기를 나눠보세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VeA-7D-0MY">
+                                        <rect key="frame" x="17" y="16" width="290" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="2xr-gr-bAk"/>
-                                            <constraint firstAttribute="width" constant="294" id="ZOr-JT-Sf3"/>
+                                            <constraint firstAttribute="width" constant="290" id="ZOr-JT-Sf3"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -57,6 +57,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="등록"/>
+                                        <connections>
+                                            <action selector="submitBtnTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Yxk-c2-V69"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,7 +67,7 @@
                                     <constraint firstAttribute="width" constant="390" id="MHe-8w-3wR"/>
                                     <constraint firstAttribute="height" constant="86" id="f3k-hV-dtt"/>
                                     <constraint firstItem="VeA-7D-0MY" firstAttribute="leading" secondItem="4E9-id-JAW" secondAttribute="leading" constant="17" id="gPM-Su-pAG"/>
-                                    <constraint firstItem="sHq-I7-oWh" firstAttribute="top" secondItem="4E9-id-JAW" secondAttribute="top" constant="16" id="qVD-gT-GRT"/>
+                                    <constraint firstItem="sHq-I7-oWh" firstAttribute="top" secondItem="VeA-7D-0MY" secondAttribute="top" id="qVD-gT-GRT"/>
                                     <constraint firstItem="VeA-7D-0MY" firstAttribute="top" secondItem="4E9-id-JAW" secondAttribute="top" constant="16" id="sNP-YP-KGd"/>
                                     <constraint firstAttribute="trailing" secondItem="sHq-I7-oWh" secondAttribute="trailing" constant="17" id="wRa-UE-9Mb"/>
                                 </constraints>
