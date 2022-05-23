@@ -11,7 +11,7 @@
         <!--Post Detail View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="PostDetailViewController" id="Y6W-OH-hqX" customClass="PostDetailViewController" customModule="Careerly" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="PostDetailViewController" customModule="Careerly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,7 +29,7 @@
                                         <buttonConfiguration key="configuration" style="plain" image="btn_edit"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="RGo-G7-2ET" secondAttribute="trailing" constant="22" id="77l-e3-JKw"/>
                                     <constraint firstAttribute="height" constant="87" id="8HV-rd-EUj"/>
@@ -69,29 +69,29 @@
                                     <constraint firstAttribute="trailing" secondItem="sHq-I7-oWh" secondAttribute="trailing" constant="17" id="wRa-UE-9Mb"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="h3d-O1-DtL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="L2s-Ph-GLM">
                                 <rect key="frame" x="0.0" y="87" width="390" height="671"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="sectionIndexBackgroundColor" systemColor="systemGray4Color"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="h3d-O1-DtL" secondAttribute="trailing" id="5yu-S5-Q3k"/>
                             <constraint firstItem="0H2-OL-gFr" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="BGq-Tk-5ft"/>
+                            <constraint firstItem="4E9-id-JAW" firstAttribute="top" secondItem="L2s-Ph-GLM" secondAttribute="bottom" id="EVV-PQ-v2k"/>
                             <constraint firstItem="0H2-OL-gFr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Ett-lK-bxQ"/>
-                            <constraint firstItem="h3d-O1-DtL" firstAttribute="top" secondItem="0H2-OL-gFr" secondAttribute="bottom" id="H8l-nV-ItM"/>
-                            <constraint firstItem="h3d-O1-DtL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="a0W-tQ-ApE"/>
+                            <constraint firstItem="L2s-Ph-GLM" firstAttribute="top" secondItem="0H2-OL-gFr" secondAttribute="bottom" id="G9t-m7-RkO"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0H2-OL-gFr" secondAttribute="trailing" id="a4k-5A-prE"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4E9-id-JAW" secondAttribute="trailing" id="bVy-q8-C7d"/>
+                            <constraint firstItem="L2s-Ph-GLM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="cFc-Sg-3Ww"/>
                             <constraint firstItem="4E9-id-JAW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fOW-tE-5I1"/>
-                            <constraint firstItem="4E9-id-JAW" firstAttribute="top" secondItem="h3d-O1-DtL" secondAttribute="bottom" id="fYn-n5-IHw"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="L2s-Ph-GLM" secondAttribute="trailing" id="gzE-FL-A8u"/>
                             <constraint firstItem="4E9-id-JAW" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" id="xfM-7a-3xQ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="commentTextField" destination="VeA-7D-0MY" id="IQ7-Ur-b5Z"/>
+                        <outlet property="postTableView" destination="L2s-Ph-GLM" id="b3I-KI-eNy"/>
                         <outlet property="submitBtn" destination="sHq-I7-oWh" id="PQu-6i-tXu"/>
                     </connections>
                 </viewController>
@@ -104,12 +104,6 @@
         <image name="btn_edit" width="5" height="18"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
