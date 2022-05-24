@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Post Detail View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="PostDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="PostDetailViewController" customModule="Careerly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0H2-OL-gFr">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="87"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGo-G7-2ET">
+                                        <rect key="frame" x="363" y="46" width="5" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="5" id="8ID-o7-MVT"/>
+                                            <constraint firstAttribute="height" constant="18" id="fmY-ca-ffQ"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="btn_edit"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="RGo-G7-2ET" secondAttribute="trailing" constant="22" id="77l-e3-JKw"/>
+                                    <constraint firstAttribute="height" constant="87" id="8HV-rd-EUj"/>
+                                    <constraint firstAttribute="bottom" secondItem="RGo-G7-2ET" secondAttribute="bottom" constant="23" id="92U-5h-gkO"/>
+                                    <constraint firstItem="RGo-G7-2ET" firstAttribute="top" secondItem="0H2-OL-gFr" secondAttribute="top" constant="46" id="j2a-iB-4Tw"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4E9-id-JAW">
+                                <rect key="frame" x="0.0" y="758" width="390" height="86"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="게시글에 대해 이야기를 나눠보세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VeA-7D-0MY">
+                                        <rect key="frame" x="17" y="16" width="290" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="2xr-gr-bAk"/>
+                                            <constraint firstAttribute="width" constant="290" id="ZOr-JT-Sf3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sHq-I7-oWh">
+                                        <rect key="frame" x="316" y="16" width="57" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="Tic-KX-cVF"/>
+                                            <constraint firstAttribute="width" constant="57" id="mow-zR-Atk"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="등록"/>
+                                        <connections>
+                                            <action selector="submitBtnTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Yxk-c2-V69"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="390" id="MHe-8w-3wR"/>
+                                    <constraint firstAttribute="height" constant="86" id="f3k-hV-dtt"/>
+                                    <constraint firstItem="VeA-7D-0MY" firstAttribute="leading" secondItem="4E9-id-JAW" secondAttribute="leading" constant="17" id="gPM-Su-pAG"/>
+                                    <constraint firstItem="sHq-I7-oWh" firstAttribute="top" secondItem="VeA-7D-0MY" secondAttribute="top" id="qVD-gT-GRT"/>
+                                    <constraint firstItem="VeA-7D-0MY" firstAttribute="top" secondItem="4E9-id-JAW" secondAttribute="top" constant="16" id="sNP-YP-KGd"/>
+                                    <constraint firstAttribute="trailing" secondItem="sHq-I7-oWh" secondAttribute="trailing" constant="17" id="wRa-UE-9Mb"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="L2s-Ph-GLM">
+                                <rect key="frame" x="0.0" y="87" width="390" height="671"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0H2-OL-gFr" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="BGq-Tk-5ft"/>
+                            <constraint firstItem="4E9-id-JAW" firstAttribute="top" secondItem="L2s-Ph-GLM" secondAttribute="bottom" id="EVV-PQ-v2k"/>
+                            <constraint firstItem="0H2-OL-gFr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Ett-lK-bxQ"/>
+                            <constraint firstItem="L2s-Ph-GLM" firstAttribute="top" secondItem="0H2-OL-gFr" secondAttribute="bottom" id="G9t-m7-RkO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0H2-OL-gFr" secondAttribute="trailing" id="a4k-5A-prE"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4E9-id-JAW" secondAttribute="trailing" id="bVy-q8-C7d"/>
+                            <constraint firstItem="L2s-Ph-GLM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="cFc-Sg-3Ww"/>
+                            <constraint firstItem="4E9-id-JAW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fOW-tE-5I1"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="L2s-Ph-GLM" secondAttribute="trailing" id="gzE-FL-A8u"/>
+                            <constraint firstItem="4E9-id-JAW" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" id="xfM-7a-3xQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="commentTextField" destination="VeA-7D-0MY" id="IQ7-Ur-b5Z"/>
+                        <outlet property="postTableView" destination="L2s-Ph-GLM" id="b3I-KI-eNy"/>
+                        <outlet property="submitBtn" destination="sHq-I7-oWh" id="PQu-6i-tXu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-23" y="89"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="btn_edit" width="5" height="18"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
