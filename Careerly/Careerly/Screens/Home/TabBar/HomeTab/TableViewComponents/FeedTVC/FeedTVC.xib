@@ -148,6 +148,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="32.5" height="32"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="icon_message"/>
+                                        <connections>
+                                            <action selector="commentBtnTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fcz-MZ-g7J"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dj7-Fu-oq3">
                                         <rect key="frame" x="42.5" y="0.0" width="32.5" height="32"/>

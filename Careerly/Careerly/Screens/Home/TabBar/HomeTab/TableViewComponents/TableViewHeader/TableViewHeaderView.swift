@@ -8,7 +8,7 @@
 import UIKit
 
 protocol TableViewHeaderViewDelegate: AnyObject {
-    func presentPostView()
+    func showPostView()
 }
 
 final class TableViewHeaderView: UIView {
@@ -20,6 +20,6 @@ final class TableViewHeaderView: UIView {
     // MARK: - @IBAction Part
     @IBAction func postFeedBtnDidTap(_ sender: UIButton) {
         // feed 작성 화면으로 이동
-        delegate?.presentPostView()
+        delegate?.showPostView()
     }
 }
