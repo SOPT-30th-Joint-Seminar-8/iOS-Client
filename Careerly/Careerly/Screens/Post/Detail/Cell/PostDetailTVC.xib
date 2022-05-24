@@ -79,7 +79,7 @@
                                     <constraint firstAttribute="width" constant="14" id="CAq-g3-swo"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="icon_recommend"/>
+                                <buttonConfiguration key="configuration" style="plain" image="icon_recommend_detail"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추천해요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQx-xB-5D9">
                                 <rect key="frame" x="20.999999999999996" y="0.0" width="41.666666666666657" height="17"/>
@@ -170,7 +170,7 @@
     </objects>
     <resources>
         <image name="Component 5" width="104.66666412353516" height="17.333333969116211"/>
-        <image name="icon_recommend" width="14" height="17.333333969116211"/>
+        <image name="icon_recommend_detail" width="14" height="18"/>
         <image name="image_profile" width="26" height="26"/>
         <image name="profile_group" width="34" height="20.333333969116211"/>
     </resources>
