@@ -110,3 +110,4 @@ extension HomeTabVC: FeedTVCDelegate {
         navigationController?.pushViewController(postDetailVC, animated: true)
     }
 }
+ 

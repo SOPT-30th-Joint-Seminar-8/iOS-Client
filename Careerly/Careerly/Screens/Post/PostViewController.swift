@@ -77,7 +77,7 @@ class PostViewController: UIViewController {
     // MARK: - @IBAction Part
     @IBAction func successBtnTap(_ sender: Any) {
         let storyboard: UIStoryboard? = UIStoryboard(name: "PostDetail", bundle: Bundle.main)
-        guard let postDetailVC = storyboard?.instantiateViewController(identifier: "PostDetail") as? PostDetailViewController else {
+        guard let postDetailVC = storyboard?.instantiateViewController(identifier: "PostDetailViewController") as? PostDetailViewController else {
             return
         }
         
