@@ -20,7 +20,7 @@ class PostDetailTVC: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setData(_ data: PostModel){
+    func setData(_ data: PostDetailModel){
         postTextLabel.text = data.postText
     }
     

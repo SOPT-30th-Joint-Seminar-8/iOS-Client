@@ -12,7 +12,7 @@
 		2352AEB12832ADAA0043D932 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2352AEB02832ADAA0043D932 /* PostViewController.swift */; };
 		2367D7BC2833DC630085CA21 /* PostDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2367D7BB2833DC630085CA21 /* PostDetail.storyboard */; };
 		2367D7BE2833DC790085CA21 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2367D7BD2833DC790085CA21 /* PostDetailViewController.swift */; };
-		2382F457283BDD0A003C1EEB /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2382F456283BDD0A003C1EEB /* PostModel.swift */; };
+		2382F457283BDD0A003C1EEB /* PostDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2382F456283BDD0A003C1EEB /* PostDetailModel.swift */; };
 		2382F45E283BEABE003C1EEB /* PostCommentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2382F45C283BEABE003C1EEB /* PostCommentTVC.swift */; };
 		2382F45F283BEABE003C1EEB /* PostCommentTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2382F45D283BEABE003C1EEB /* PostCommentTVC.xib */; };
 		2382F461283BEFA1003C1EEB /* PostCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2382F460283BEFA1003C1EEB /* PostCommentModel.swift */; };
@@ -45,7 +45,7 @@
 		2352AEB02832ADAA0043D932 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		2367D7BB2833DC630085CA21 /* PostDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostDetail.storyboard; sourceTree = "<group>"; };
 		2367D7BD2833DC790085CA21 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
-		2382F456283BDD0A003C1EEB /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		2382F456283BDD0A003C1EEB /* PostDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailModel.swift; sourceTree = "<group>"; };
 		2382F45C283BEABE003C1EEB /* PostCommentTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentTVC.swift; sourceTree = "<group>"; };
 		2382F45D283BEABE003C1EEB /* PostCommentTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCommentTVC.xib; sourceTree = "<group>"; };
 		2382F460283BEFA1003C1EEB /* PostCommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentModel.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 		23FEB712283D2C0000A85376 /* Comment */ = {
 			isa = PBXGroup;
 			children = (
-				2382F456283BDD0A003C1EEB /* PostModel.swift */,
+				2382F456283BDD0A003C1EEB /* PostDetailModel.swift */,
 				2382F45C283BEABE003C1EEB /* PostCommentTVC.swift */,
 				2382F45D283BEABE003C1EEB /* PostCommentTVC.xib */,
 				2382F460283BEFA1003C1EEB /* PostCommentModel.swift */,
@@ -403,7 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23246F592833BF16004A46C5 /* UITextField++.swift in Sources */,
-				2382F457283BDD0A003C1EEB /* PostModel.swift in Sources */,
+				2382F457283BDD0A003C1EEB /* PostDetailModel.swift in Sources */,
 				2367D7BE2833DC790085CA21 /* PostDetailViewController.swift in Sources */,
 				2382F461283BEFA1003C1EEB /* PostCommentModel.swift in Sources */,
 				2352AEB12832ADAA0043D932 /* PostViewController.swift in Sources */,

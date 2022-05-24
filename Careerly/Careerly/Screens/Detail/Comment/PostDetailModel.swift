@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PostModel{
+struct PostDetailModel{
     var postText :String
 }
 

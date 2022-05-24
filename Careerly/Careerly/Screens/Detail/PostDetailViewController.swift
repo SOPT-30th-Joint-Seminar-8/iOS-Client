@@ -86,7 +86,7 @@ extension PostDetailViewController: UITableViewDataSource{
             
             //guard let text = postText else { return }
             //non-void function should return a value
-            cell.setData(PostModel(postText: postText ?? ""))
+            cell.setData(PostDetailModel(postText: postText ?? ""))
             return cell
         case 1:
             guard let cell = postTableView.dequeueReusableCell(withIdentifier: PostCommentTVC.identifier, for: indexPath) as? PostCommentTVC else { return UITableViewCell() }
