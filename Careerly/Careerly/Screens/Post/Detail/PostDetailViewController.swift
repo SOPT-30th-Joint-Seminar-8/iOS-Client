@@ -8,13 +8,16 @@
 import UIKit
 
 class PostDetailViewController: UIViewController {
-
+    // MARK: - @IBOutlet Part
     @IBOutlet weak var commentTextField: UITextField!
     @IBOutlet weak var submitBtn: UIButton!
-    var postText : String?
     @IBOutlet weak var postTableView: UITableView!
-    var commentData : [PostCommentModel] = []
     
+    // MARK: - Vars & Lets Part
+    var commentData : [PostCommentModel] = []
+    var postText : String?
+    
+    // MARK: - Life Cycle Part
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -24,6 +27,7 @@ class PostDetailViewController: UIViewController {
         setTableView()
     }
     
+    // MARK: - Custom Method Part
     private func registerNib(){
         let postNib = UINib(nibName: PostDetailTVC.identifier, bundle: nil)
         postTableView.register(postNib, forCellReuseIdentifier: PostDetailTVC.identifier)
@@ -54,7 +58,8 @@ class PostDetailViewController: UIViewController {
         submitBtn.isEnabled = commentTextField.hasText
         submitBtn.backgroundColor = UIColor(rgb: commentTextField.hasText ? 0xED6653 :0xEFC3BC)
     }
-
+    
+    // MARK: - @IBAction Part
     @IBAction func submitBtnTap(_ sender: Any) {
         guard let commentText = commentTextField.text else { return }
         commentData.append(PostCommentModel(comment: commentText))
@@ -64,6 +69,7 @@ class PostDetailViewController: UIViewController {
     
 }
 
+// MARK: - Extension Part
 extension PostDetailViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -77,7 +83,10 @@ extension PostDetailViewController: UITableViewDataSource{
         switch indexPath.section{
         case 0:
             guard let cell = postTableView.dequeueReusableCell(withIdentifier: PostDetailTVC.identifier, for: indexPath) as? PostDetailTVC else { return UITableViewCell() }
-            cell.setData(PostModel(postText: "내 이름은 이소진이다~!!"))
+            
+            //guard let text = postText else { return }
+            //non-void function should return a value
+            cell.setData(PostModel(postText: postText ?? ""))
             return cell
         case 1:
             guard let cell = postTableView.dequeueReusableCell(withIdentifier: PostCommentTVC.identifier, for: indexPath) as? PostCommentTVC else { return UITableViewCell() }

@@ -9,11 +9,13 @@ import UIKit
 
 class PostViewController: UIViewController {
 
+    // MARK: - @IBOutlet Part
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var postTextView: UITextView!
     @IBOutlet weak var footerView: UIView!
     @IBOutlet weak var successBtn: UIButton!
     
+    // MARK: - Life Cycle Part
     override func viewDidLoad() {
         super.viewDidLoad()
         configureHeaderUI()
@@ -21,6 +23,7 @@ class PostViewController: UIViewController {
 //        addKeyboardNotification()
     }
     
+    // MARK: - Custom Method Part
     private func configureHeaderUI(){
         headerView.layer.shadowColor = UIColor.black.cgColor
         headerView.layer.shadowOffset = CGSize(width: 0, height: 4)
@@ -65,8 +68,22 @@ class PostViewController: UIViewController {
             footerView.frame.origin.y += keyboardHeight
         }
     }
+    
+    // MARK: - @IBAction Part
+    @IBAction func successBtnTap(_ sender: Any) {
+        let storyboard: UIStoryboard? = UIStoryboard(name: "PostDetail", bundle: Bundle.main)
+        guard let postDetailVC = storyboard?.instantiateViewController(identifier: "PostDetail") as? PostDetailViewController else {
+            return
+        }
+        
+        postDetailVC.modalPresentationStyle = .fullScreen
+        postDetailVC.postText = postTextView.text
+        self.present(postDetailVC, animated: true)
+    }
+    
 }
 
+// MARK: - Extension Part
 extension PostViewController: UITextViewDelegate{
     func textViewDidChange(_ textView: UITextView) {
         successBtn.backgroundColor = UIColor(rgb: postTextView.hasText ? 0xED6653 :0xEFC3BC)
