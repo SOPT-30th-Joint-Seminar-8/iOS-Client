@@ -25,10 +25,6 @@ class HomeTabVC: UIViewController {
         tabBarController?.tabBar.isHidden = false
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        tabBarController?.tabBar.isHidden = true
-    }
-    
     // MARK: - Custom Method Part
     func setDelegate() {
         tableView.delegate = self
@@ -101,6 +97,7 @@ extension HomeTabVC: UITableViewDataSource {
 extension HomeTabVC: TableViewHeaderViewDelegate {
     func showPostView() {
         guard let postVC = UIStoryboard(name: "Post", bundle: nil).instantiateViewController(withIdentifier: "PostViewController") as? PostViewController else { return }
+        tabBarController?.tabBar.isHidden = true
         navigationController?.pushViewController(postVC, animated: true)
     }
 }
@@ -109,6 +106,7 @@ extension HomeTabVC: FeedTVCDelegate {
     func showPostDetailView() {
         guard let postDetailVC = UIStoryboard(name: "PostDetail", bundle: nil).instantiateViewController(withIdentifier: "PostDetailViewController") as? PostDetailViewController else { return }
         postDetailVC.postText = "sample text"
+        tabBarController?.tabBar.isHidden = true
         navigationController?.pushViewController(postDetailVC, animated: true)
     }
 }
