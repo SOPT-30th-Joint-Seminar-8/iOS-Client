@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E473586223750D52152EEF4 /* Pods_Careerly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7755FFF874B1A45EA76E292C /* Pods_Careerly.framework */; };
 		23246F592833BF16004A46C5 /* UITextField++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23246F582833BF16004A46C5 /* UITextField++.swift */; };
 		234C4936282FD50B009747B2 /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234C4935282FD50B009747B2 /* Post.storyboard */; };
 		2352AEB12832ADAA0043D932 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2352AEB02832ADAA0043D932 /* PostViewController.swift */; };
@@ -19,7 +20,6 @@
 		23E4726C28354802003B0BF8 /* PostDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4726A28354802003B0BF8 /* PostDetailTVC.swift */; };
 		23E4726D28354802003B0BF8 /* PostDetailTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23E4726B28354802003B0BF8 /* PostDetailTVC.xib */; };
 		23E71EC02834027400D638B5 /* UIColor++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E71EBF2834027400D638B5 /* UIColor++.swift */; };
-		0E473586223750D52152EEF4 /* Pods_Careerly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7755FFF874B1A45EA76E292C /* Pods_Careerly.framework */; };
 		CE05BC752835240B007D3CA3 /* FeedTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE05BC732835240B007D3CA3 /* FeedTVC.swift */; };
 		CE05BC762835240B007D3CA3 /* FeedTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE05BC742835240B007D3CA3 /* FeedTVC.xib */; };
 		CE4CDE702833E16C002BBB4D /* HomeTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4CDE6F2833E16C002BBB4D /* HomeTabVC.swift */; };
@@ -293,10 +293,10 @@
 		CECC9394282FBDDB00432906 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				CECC939B282FBE8200432906 /* Home */,
 				23E4726928354697003B0BF8 /* Detail */,
 				234C4932282FD494009747B2 /* Post */,
 				CECC939C282FBE8600432906 /* Guide */,
-				CECC939B282FBE8200432906 /* Home */,
 				CECC939A282FBE7D00432906 /* Base */,
 			);
 			path = Screens;

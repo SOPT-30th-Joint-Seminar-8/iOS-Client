@@ -86,6 +86,9 @@ class PostViewController: UIViewController {
         self.present(postDetailVC, animated: true)
     }
     
+    @IBAction func backBtnTap(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 // MARK: - Extension Part

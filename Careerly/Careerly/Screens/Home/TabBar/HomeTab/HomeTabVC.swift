@@ -18,6 +18,7 @@ class HomeTabVC: UIViewController {
         
         setDelegate()
         configureTableView()
+        configureNavigationBar()
     }
     
     // MARK: - Custom Method Part
@@ -31,10 +32,15 @@ class HomeTabVC: UIViewController {
         registerCell()
     }
     
+    func configureNavigationBar() {
+        navigationController?.isNavigationBarHidden = true
+    }
+    
     func configureTableViewHeader() {
         // TableView 헤더 설정
         let headerNib = UINib(nibName: TableViewHeaderView.identifier, bundle: nil)
-        guard let headerView = headerNib.instantiate(withOwner: self).first as? UIView else { return }
+        guard let headerView = headerNib.instantiate(withOwner: self).first as? TableViewHeaderView else { return }
+        headerView.delegate = self
         headerView.translatesAutoresizingMaskIntoConstraints = false
         headerView.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
         
@@ -80,5 +86,12 @@ extension HomeTabVC: UITableViewDataSource {
         else { return UITableViewCell()}
         
         return feedCell
+    }
+}
+
+extension HomeTabVC: TableViewHeaderViewDelegate {
+    func presentPostView() {
+        guard let postVC = UIStoryboard(name: "Post", bundle: nil).instantiateViewController(withIdentifier: "PostViewController") as? PostViewController else { return }
+        navigationController?.pushViewController(postVC, animated: true)
     }
 }
