@@ -21,6 +21,7 @@ class PostViewController: UIViewController {
         configureHeaderUI()
         postTextView.delegate = self
 //        addKeyboardNotification()
+        setTextViewUI()
     }
     
     // MARK: - Custom Method Part
@@ -32,6 +33,10 @@ class PostViewController: UIViewController {
         successBtn.backgroundColor = UIColor(rgb: 0xEFC3BC)
         successBtn.tintColor = UIColor(rgb: 0xFFFFFF)
         successBtn.layer.cornerRadius = 7
+    }
+    
+    private func setTextViewUI(){
+        postTextView.textContainerInset = UIEdgeInsets(top: 15, left: 10, bottom: 15, right: 10);
     }
     
     private func addKeyboardNotification() {
