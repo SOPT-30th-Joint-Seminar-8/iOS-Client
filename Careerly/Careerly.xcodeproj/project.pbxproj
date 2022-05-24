@@ -85,23 +85,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		233BBC7B283BC52F00BF3A81 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				23E4726A28354802003B0BF8 /* PostDetailTVC.swift */,
-				23E4726B28354802003B0BF8 /* PostDetailTVC.xib */,
-				2382F456283BDD0A003C1EEB /* PostModel.swift */,
-				2382F45C283BEABE003C1EEB /* PostCommentTVC.swift */,
-				2382F45D283BEABE003C1EEB /* PostCommentTVC.xib */,
-				2382F460283BEFA1003C1EEB /* PostCommentModel.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		234C4932282FD494009747B2 /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				23E4726928354697003B0BF8 /* Detail */,
 				234C4935282FD50B009747B2 /* Post.storyboard */,
 				2352AEB02832ADAA0043D932 /* PostViewController.swift */,
 			);
@@ -111,11 +97,32 @@
 		23E4726928354697003B0BF8 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				233BBC7B283BC52F00BF3A81 /* Cell */,
+				23FEB713283D2C0900A85376 /* DetailCell */,
+				23FEB712283D2C0000A85376 /* Comment */,
 				2367D7BB2833DC630085CA21 /* PostDetail.storyboard */,
 				2367D7BD2833DC790085CA21 /* PostDetailViewController.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		23FEB712283D2C0000A85376 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				2382F456283BDD0A003C1EEB /* PostModel.swift */,
+				2382F45C283BEABE003C1EEB /* PostCommentTVC.swift */,
+				2382F45D283BEABE003C1EEB /* PostCommentTVC.xib */,
+				2382F460283BEFA1003C1EEB /* PostCommentModel.swift */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		23FEB713283D2C0900A85376 /* DetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				23E4726A28354802003B0BF8 /* PostDetailTVC.swift */,
+				23E4726B28354802003B0BF8 /* PostDetailTVC.xib */,
+			);
+			path = DetailCell;
 			sourceTree = "<group>";
 		};
 		CE97F0A22832C0AD00A4C287 /* TabBar */ = {
@@ -175,6 +182,7 @@
 		CECC9394282FBDDB00432906 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				23E4726928354697003B0BF8 /* Detail */,
 				234C4932282FD494009747B2 /* Post */,
 				CECC939C282FBE8600432906 /* Guide */,
 				CECC939B282FBE8200432906 /* Home */,
