@@ -18,6 +18,11 @@ class HomeTabVC: UIViewController {
         
         setDelegate()
         configureTableView()
+        configureNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
     }
     
     // MARK: - Custom Method Part
@@ -31,10 +36,15 @@ class HomeTabVC: UIViewController {
         registerCell()
     }
     
+    func configureNavigationBar() {
+        navigationController?.isNavigationBarHidden = true
+    }
+    
     func configureTableViewHeader() {
         // TableView 헤더 설정
         let headerNib = UINib(nibName: TableViewHeaderView.identifier, bundle: nil)
-        guard let headerView = headerNib.instantiate(withOwner: self).first as? UIView else { return }
+        guard let headerView = headerNib.instantiate(withOwner: self).first as? TableViewHeaderView else { return }
+        headerView.delegate = self
         headerView.translatesAutoresizingMaskIntoConstraints = false
         headerView.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
         
@@ -78,7 +88,26 @@ extension HomeTabVC: UITableViewDataSource {
             withIdentifier: FeedTVC.identifier,
             for: indexPath) as? FeedTVC
         else { return UITableViewCell()}
+        feedCell.delegate = self
         
         return feedCell
     }
 }
+
+extension HomeTabVC: TableViewHeaderViewDelegate {
+    func showPostView() {
+        guard let postVC = UIStoryboard(name: "Post", bundle: nil).instantiateViewController(withIdentifier: "PostViewController") as? PostViewController else { return }
+        tabBarController?.tabBar.isHidden = true
+        navigationController?.pushViewController(postVC, animated: true)
+    }
+}
+
+extension HomeTabVC: FeedTVCDelegate {
+    func showPostDetailView() {
+        guard let postDetailVC = UIStoryboard(name: "PostDetail", bundle: nil).instantiateViewController(withIdentifier: "PostDetailViewController") as? PostDetailViewController else { return }
+        postDetailVC.postText = "sample text"
+        tabBarController?.tabBar.isHidden = true
+        navigationController?.pushViewController(postDetailVC, animated: true)
+    }
+}
+ 

@@ -79,7 +79,7 @@
                             <constraint firstItem="QRH-8q-nhC" firstAttribute="leading" secondItem="ToM-0T-Lwm" secondAttribute="leading" id="rqX-aT-vHX"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0F-nu-7QT">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0F-nu-7QT">
                         <rect key="frame" x="17" y="85" width="416" height="65"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
@@ -148,6 +148,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="32.5" height="32"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="icon_message"/>
+                                        <connections>
+                                            <action selector="commentBtnTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fcz-MZ-g7J"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dj7-Fu-oq3">
                                         <rect key="frame" x="42.5" y="0.0" width="32.5" height="32"/>
