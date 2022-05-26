@@ -18,7 +18,6 @@ class FeedTVC: UITableViewCell {
     var model: Post? {
         didSet {
             guard let model = model else { return }
-            print(model)
             setData(model)
         }
     }

@@ -17,10 +17,14 @@ class HomeTabVC: UIViewController {
         didSet { tableView.reloadData() }
     }
     
-    private var indexForPopularProfile = [3, 7, 11, 15, 19]
-    
-    private var postList = [Any]()
-    
+    private var indexForPopularProfile: [Int] = {
+        var array = [Int]()
+        for i in 0...10 {
+            array.append(4*i + 3)
+        }
+        return array
+    }()
+        
     // MARK: - @IBOutlet Part
     @IBOutlet weak var tableView: UITableView!
     
@@ -85,7 +89,7 @@ extension HomeTabVC: UITableViewDelegate {
 
 extension HomeTabVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return feedList.count + (feedList.count / 3) - 2
+        return feedList.count + (feedList.count / 3)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -93,14 +97,15 @@ extension HomeTabVC: UITableViewDataSource {
             guard let popularProfileCell = tableView.dequeueReusableCell(
                 withIdentifier: PopularProfileTVC.identifier,
                 for: indexPath) as? PopularProfileTVC
-            else { return UITableViewCell()}
+            else { return UITableViewCell() }
             
+            popularProfileCell.profiles = popularProfileList
             return popularProfileCell
         }
         guard let feedCell = tableView.dequeueReusableCell(
             withIdentifier: FeedTVC.identifier,
             for: indexPath) as? FeedTVC
-        else { return UITableViewCell()}
+        else { return UITableViewCell() }
         
         feedCell.delegate = self
         
@@ -113,7 +118,6 @@ extension HomeTabVC: UITableViewDataSource {
                 }
             }
         }
-        
         return feedCell
     }
 }
@@ -145,11 +149,6 @@ extension HomeTabVC {
                 guard let postData = data.data else { return }
                 self.feedList = postData.posts
                 self.popularProfileList = postData.hotProfiles
-//                for i in 0..<(postData.posts.count + postData.hotProfiles.count) {
-//                    if self.indexForPopularProfile.contains(i) {
-//                        postList.append(postData.hotProfiles)
-//                    }
-//                }
             case .requestErr(let data):
                 print("request error")
                 print(data)
