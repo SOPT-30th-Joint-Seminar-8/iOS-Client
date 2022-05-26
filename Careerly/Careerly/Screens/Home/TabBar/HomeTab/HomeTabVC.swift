@@ -8,7 +8,19 @@
 import UIKit
 
 class HomeTabVC: UIViewController {
-
+    // MARK: - Vars & Lets Part
+    private var feedList = [Post]() {
+        didSet { tableView.reloadData() }
+    }
+    
+    private var popularProfileList = [HotProfile]() {
+        didSet { tableView.reloadData() }
+    }
+    
+    private var indexForPopularProfile = [3, 7, 11, 15, 19]
+    
+    private var postList = [Any]()
+    
     // MARK: - @IBOutlet Part
     @IBOutlet weak var tableView: UITableView!
     
@@ -73,11 +85,11 @@ extension HomeTabVC: UITableViewDelegate {
 
 extension HomeTabVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 9
+        return feedList.count + (feedList.count / 3) - 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row % 3 == 0 && indexPath.row > 0 {
+        if indexForPopularProfile.contains(indexPath.row){
             guard let popularProfileCell = tableView.dequeueReusableCell(
                 withIdentifier: PopularProfileTVC.identifier,
                 for: indexPath) as? PopularProfileTVC
@@ -89,7 +101,18 @@ extension HomeTabVC: UITableViewDataSource {
             withIdentifier: FeedTVC.identifier,
             for: indexPath) as? FeedTVC
         else { return UITableViewCell()}
+        
         feedCell.delegate = self
+        
+        outer: for k in 0...indexPath.row {
+            for j in 4*k...4*k+2 {
+                if j == indexPath.row {
+                    feedCell.model = feedList[indexPath.row - k]
+                    feedCell.indexPath = indexPath.row - k
+                    break outer
+                }
+            }
+        }
         
         return feedCell
     }
@@ -118,7 +141,15 @@ extension HomeTabVC {
         PostService.shared.getPosts { response in
             switch response {
             case .success(let data):
-                print(data)
+                guard let data = data as? BaseResponse<PostData> else { return }
+                guard let postData = data.data else { return }
+                self.feedList = postData.posts
+                self.popularProfileList = postData.hotProfiles
+//                for i in 0..<(postData.posts.count + postData.hotProfiles.count) {
+//                    if self.indexForPopularProfile.contains(i) {
+//                        postList.append(postData.hotProfiles)
+//                    }
+//                }
             case .requestErr(let data):
                 print("request error")
                 print(data)
