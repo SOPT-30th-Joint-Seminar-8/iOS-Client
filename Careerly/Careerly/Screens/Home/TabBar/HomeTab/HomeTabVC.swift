@@ -19,6 +19,7 @@ class HomeTabVC: UIViewController {
         setDelegate()
         configureTableView()
         configureNavigationBar()
+        getPosts()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -111,3 +112,23 @@ extension HomeTabVC: FeedTVCDelegate {
     }
 }
  
+//MARK: - API
+extension HomeTabVC {
+    func getPosts() {
+        PostService.shared.getPosts { response in
+            switch response {
+            case .success(let data):
+                print(data)
+            case .requestErr(let data):
+                print("request error")
+                print(data)
+            case .pathErr(let data):
+                print("path error")
+                print(data)
+            default:
+                print("DEBUG: Fail to get Posts.")
+                return
+            }
+        }
+    }
+}

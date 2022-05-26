@@ -29,13 +29,13 @@
 		CE53999E282FC64D0037512F /* Base.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE53999D282FC64D0037512F /* Base.txt */; };
 		CE5399A0282FC6640037512F /* Utils.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE53999F282FC6640037512F /* Utils.txt */; };
 		CE5399A2282FC6740037512F /* Literal.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE5399A1282FC6740037512F /* Literal.txt */; };
-		CE5399A4282FC67F0037512F /* Network.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE5399A3282FC67F0037512F /* Network.txt */; };
 		CE5399A6282FC68B0037512F /* Extensions.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE5399A5282FC68B0037512F /* Extensions.txt */; };
 		CE5399A8282FC69D0037512F /* Models.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE5399A7282FC69D0037512F /* Models.txt */; };
 		CE809FAA28367CE2008E9378 /* PopularProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE809FA828367CE2008E9378 /* PopularProfileTVC.swift */; };
 		CE809FAB28367CE2008E9378 /* PopularProfileTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE809FA928367CE2008E9378 /* PopularProfileTVC.xib */; };
 		CE809FAF283680A8008E9378 /* PopularProfileCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE809FAD283680A8008E9378 /* PopularProfileCVC.swift */; };
 		CE809FB0283680A8008E9378 /* PopularProfileCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE809FAE283680A8008E9378 /* PopularProfileCVC.xib */; };
+		CE934D90283FAF2F00E9EEA3 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE934D8F283FAF2F00E9EEA3 /* BaseModel.swift */; };
 		CE97F0A12832C07700A4C287 /* HomeTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE97F0A02832C07700A4C287 /* HomeTab.storyboard */; };
 		CECC9380282FBDC500432906 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC937F282FBDC500432906 /* AppDelegate.swift */; };
 		CECC9382282FBDC500432906 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC9381282FBDC500432906 /* SceneDelegate.swift */; };
@@ -85,13 +85,13 @@
 		CE53999D282FC64D0037512F /* Base.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Base.txt; sourceTree = "<group>"; };
 		CE53999F282FC6640037512F /* Utils.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Utils.txt; sourceTree = "<group>"; };
 		CE5399A1282FC6740037512F /* Literal.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Literal.txt; sourceTree = "<group>"; };
-		CE5399A3282FC67F0037512F /* Network.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Network.txt; sourceTree = "<group>"; };
 		CE5399A5282FC68B0037512F /* Extensions.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Extensions.txt; sourceTree = "<group>"; };
 		CE5399A7282FC69D0037512F /* Models.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Models.txt; sourceTree = "<group>"; };
 		CE809FA828367CE2008E9378 /* PopularProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularProfileTVC.swift; sourceTree = "<group>"; };
 		CE809FA928367CE2008E9378 /* PopularProfileTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularProfileTVC.xib; sourceTree = "<group>"; };
 		CE809FAD283680A8008E9378 /* PopularProfileCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularProfileCVC.swift; sourceTree = "<group>"; };
 		CE809FAE283680A8008E9378 /* PopularProfileCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularProfileCVC.xib; sourceTree = "<group>"; };
+		CE934D8F283FAF2F00E9EEA3 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		CE97F0A02832C07700A4C287 /* HomeTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTab.storyboard; sourceTree = "<group>"; };
 		CECC937C282FBDC500432906 /* Careerly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Careerly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECC937F282FBDC500432906 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -234,6 +234,16 @@
 			path = PopularProfileCVC;
 			sourceTree = "<group>";
 		};
+		CE934D8E283FAE7600E9EEA3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F2B486192838A2C700473AD9 /* DetailPostModel.swift */,
+				F2B486172838A2BC00473AD9 /* PostModel.swift */,
+				CE934D8F283FAF2F00E9EEA3 /* BaseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		CE97F0A22832C0AD00A4C287 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,11 +315,9 @@
 		CECC9395282FBDE300432906 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				CE5399A3282FC67F0037512F /* Network.txt */,
+				CE934D8E283FAE7600E9EEA3 /* Models */,
 				F2B486132838A1D800473AD9 /* APIConstants.swift */,
 				F2B486152838A25700473AD9 /* NetworkResult.swift */,
-				F2B486172838A2BC00473AD9 /* PostModel.swift */,
-				F2B486192838A2C700473AD9 /* DetailPostModel.swift */,
 				F2B4861B2838A32E00473AD9 /* PostService.swift */,
 			);
 			path = Network;
@@ -518,7 +526,6 @@
 				CE05BC762835240B007D3CA3 /* FeedTVC.xib in Resources */,
 				CEF961B12832C14700A06B16 /* SearchTab.storyboard in Resources */,
 				CE5399A8282FC69D0037512F /* Models.txt in Resources */,
-				CE5399A4282FC67F0037512F /* Network.txt in Resources */,
 				CE53999E282FC64D0037512F /* Base.txt in Resources */,
 				CE4CDE732833F783002BBB4D /* TableViewHeaderView.xib in Resources */,
 				CE809FAB28367CE2008E9378 /* PopularProfileTVC.xib in Resources */,
@@ -576,6 +583,7 @@
 			files = (
 				23246F592833BF16004A46C5 /* UITextField++.swift in Sources */,
 				2382F457283BDD0A003C1EEB /* PostDetailModel.swift in Sources */,
+				CE934D90283FAF2F00E9EEA3 /* BaseModel.swift in Sources */,
 				2367D7BE2833DC790085CA21 /* PostDetailViewController.swift in Sources */,
 				2382F461283BEFA1003C1EEB /* PostCommentModel.swift in Sources */,
 				2352AEB12832ADAA0043D932 /* PostViewController.swift in Sources */,
