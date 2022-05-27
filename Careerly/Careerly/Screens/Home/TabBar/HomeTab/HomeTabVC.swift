@@ -16,14 +16,6 @@ class HomeTabVC: UIViewController {
     private var popularProfileList = [HotProfile]() {
         didSet { tableView.reloadData() }
     }
-    
-    private var indexForPopularProfile: [Int] = {
-        var array = [Int]()
-        for i in 0...10 {
-            array.append(4*i + 3)
-        }
-        return array
-    }()
         
     // MARK: - @IBOutlet Part
     @IBOutlet weak var tableView: UITableView!
@@ -93,7 +85,7 @@ extension HomeTabVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexForPopularProfile.contains(indexPath.row){
+        if indexPath.row % 4 == 3 {
             guard let popularProfileCell = tableView.dequeueReusableCell(
                 withIdentifier: PopularProfileTVC.identifier,
                 for: indexPath) as? PopularProfileTVC
@@ -108,16 +100,8 @@ extension HomeTabVC: UITableViewDataSource {
         else { return UITableViewCell() }
         
         feedCell.delegate = self
-        
-        outer: for k in 0...indexPath.row {
-            for j in 4*k...4*k+2 {
-                if j == indexPath.row {
-                    feedCell.model = feedList[indexPath.row - k]
-                    feedCell.indexPath = indexPath.row - k
-                    break outer
-                }
-            }
-        }
+        feedCell.model = feedList[indexPath.row - indexPath.row/4]
+        feedCell.indexPath = indexPath.row - indexPath.row/4
         return feedCell
     }
 }
