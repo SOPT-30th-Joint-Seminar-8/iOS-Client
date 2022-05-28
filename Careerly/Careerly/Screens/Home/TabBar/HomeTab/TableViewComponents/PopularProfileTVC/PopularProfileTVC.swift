@@ -11,6 +11,7 @@ class PopularProfileTVC: UITableViewCell {
     // MARK: - Vars & Lets Part
     static let identifier = "PopularProfileTVC"
     var indexPath: Int?
+    var profiles: [HotProfile]?
     
     // MARK: - @IBOutlet Part
     @IBOutlet weak var collectionView: UICollectionView!
@@ -36,19 +37,20 @@ class PopularProfileTVC: UITableViewCell {
 
 // MARK: - Extension Part
 extension PopularProfileTVC: UICollectionViewDelegate {
-    
 }
 
 extension PopularProfileTVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return profiles?.count ?? 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: PopularProfileCVC.identifier,
-            for: indexPath) as? PopularProfileCVC
+            for: indexPath) as? PopularProfileCVC,
+              let profiles = profiles
         else { return UICollectionViewCell() }
+        cell.setData(profiles[indexPath.row])
         return cell
     }
 }

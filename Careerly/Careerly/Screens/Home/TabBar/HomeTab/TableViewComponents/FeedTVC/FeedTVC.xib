@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ToM-0T-Lwm">
                         <rect key="frame" x="17" y="26" width="412" height="40"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_profile" translatesAutoresizingMaskIntoConstraints="NO" id="QRH-8q-nhC">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_profile" translatesAutoresizingMaskIntoConstraints="NO" id="QRH-8q-nhC">
                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="39o-KG-6Em"/>
@@ -44,7 +44,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="wFa-Ws-V4g">
                                         <rect key="frame" x="0.0" y="18" width="46" height="14.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="직무" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jxx-j4-qg8">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="직무" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jxx-j4-qg8">
                                                 <rect key="frame" x="0.0" y="0.0" width="21" height="14.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="134" id="dxe-h6-roz"/>
@@ -73,6 +73,7 @@
                             <constraint firstItem="0VL-by-M1o" firstAttribute="centerY" secondItem="QRH-8q-nhC" secondAttribute="centerY" id="6I4-Ps-HQN"/>
                             <constraint firstAttribute="height" constant="40" id="6jd-p5-uxF"/>
                             <constraint firstItem="cg3-f8-sgI" firstAttribute="top" secondItem="ToM-0T-Lwm" secondAttribute="top" id="9Fb-ta-1AV"/>
+                            <constraint firstItem="cg3-f8-sgI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0VL-by-M1o" secondAttribute="trailing" constant="16" id="ZQw-Wi-GuA"/>
                             <constraint firstItem="QRH-8q-nhC" firstAttribute="top" secondItem="ToM-0T-Lwm" secondAttribute="top" id="fNf-eN-FTc"/>
                             <constraint firstAttribute="trailing" secondItem="cg3-f8-sgI" secondAttribute="trailing" id="lBI-pD-OO6"/>
                             <constraint firstItem="0VL-by-M1o" firstAttribute="leading" secondItem="QRH-8q-nhC" secondAttribute="trailing" constant="20" id="qqE-Pp-QDX"/>
@@ -205,6 +206,16 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="contentLabel" destination="l0F-nu-7QT" id="v0k-Os-3N5"/>
+                <outlet property="emailLabel" destination="Jxx-j4-qg8" id="ksy-8R-mYg"/>
+                <outlet property="likesCountImageView" destination="V1C-S3-A4X" id="Imh-b3-h5W"/>
+                <outlet property="likesCountLabel" destination="N7k-BW-3su" id="J5b-eh-fgD"/>
+                <outlet property="timeLabel" destination="jej-xm-h5G" id="GaA-Wj-Qj7"/>
+                <outlet property="userNameLabel" destination="ljQ-4T-8T1" id="FeG-XX-jrw"/>
+                <outlet property="userProfileImageView" destination="QRH-8q-nhC" id="kD4-cL-U48"/>
+                <outlet property="viewsLabel" destination="vWb-XR-y1t" id="oaX-0q-rtj"/>
+            </connections>
             <point key="canvasLocation" x="284" y="149"/>
         </tableViewCell>
     </objects>

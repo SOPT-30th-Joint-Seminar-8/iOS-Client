@@ -12,15 +12,11 @@ import Foundation
 
 struct APIConstants {
   //MARK: - Base URL
-  
-  ///예시
-//  static let baseURL = "http://13.124.62.236"
+  static let baseURL = "http://3.34.192.134:8000"
   
   //MARK: - Feature URL
+  /// 게시글 전체를 가져오기 위한 URL
+  static let getPostsURL = baseURL + "/post"
   
-  ///예시
-//  static let loginURL = baseURL + "/auth/signin"
-  
-
 }
 

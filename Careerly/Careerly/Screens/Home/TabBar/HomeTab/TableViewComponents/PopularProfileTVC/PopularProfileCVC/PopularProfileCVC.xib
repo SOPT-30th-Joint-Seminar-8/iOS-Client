@@ -97,6 +97,12 @@
                 <constraint firstAttribute="bottom" secondItem="gKY-hk-nwE" secondAttribute="bottom" id="oa6-MO-dua"/>
             </constraints>
             <size key="customSize" width="152" height="269"/>
+            <connections>
+                <outlet property="followersCountLabel" destination="OID-QO-lAZ" id="kfx-TD-Wwj"/>
+                <outlet property="jobLabel" destination="nwF-Eq-jfL" id="Ofb-P3-6F9"/>
+                <outlet property="profileImageView" destination="G4f-DW-x2X" id="dqe-O4-HLj"/>
+                <outlet property="userName" destination="1ck-N5-zje" id="LZB-w8-2j4"/>
+            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="125.55803571428571"/>
         </collectionViewCell>
     </objects>
