@@ -35,7 +35,30 @@ struct PostService {
         }
     }
     
-    
+    // 게시글 작성하기
+    func addPost(text: String , completion: @escaping(NetworkResult<Any>) -> Void) {
+        let url = APIConstants.addPostURL
+        let header: HTTPHeaders = ["Content-Type" : "application/json"]
+        let body: Parameters = [
+            "text": text
+        ]
+
+        let dataRequest = AF.request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header)
+
+        dataRequest.responseData { response in
+            switch response.result {
+            case .success:
+                guard let statusCode = response.response?.statusCode else { return }
+                guard let value = response.value else { return }
+                let networkResult = parseJSON(by: statusCode, data: value, type: AddPostData.self)
+                completion(networkResult)
+            case .failure:
+                completion(.networkFail)
+            }
+        }
+        
+    }
+
     func parseJSON<T: Codable> (by statusCode: Int, data: Data, type: T.Type) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
 
@@ -48,5 +71,4 @@ struct PostService {
         default: return .networkFail
         }
     }
-    
 }

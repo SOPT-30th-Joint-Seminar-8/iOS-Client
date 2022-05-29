@@ -30,3 +30,9 @@ struct HotProfile: Codable {
     let job: String
     let followers: Int
 }
+
+// 게시글 작성 모델
+// TODO-: _ 언더바 이런건 서버분들에게 빼달라고 해야하는지
+struct AddPostData: Codable{
+    let _id: String
+}

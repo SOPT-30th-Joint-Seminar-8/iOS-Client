@@ -76,6 +76,9 @@ class PostViewController: UIViewController {
     
     // MARK: - @IBAction Part
     @IBAction func successBtnTap(_ sender: Any) {
+        guard let text = postTextView.text else { return }
+        addPost(text: text)
+        
         let storyboard: UIStoryboard? = UIStoryboard(name: "PostDetail", bundle: Bundle.main)
         guard let postDetailVC = storyboard?.instantiateViewController(identifier: "PostDetailViewController") as? PostDetailViewController else {
             return
@@ -95,5 +98,29 @@ class PostViewController: UIViewController {
 extension PostViewController: UITextViewDelegate{
     func textViewDidChange(_ textView: UITextView) {
         successBtn.backgroundColor = UIColor(rgb: postTextView.hasText ? 0xED6653 :0xEFC3BC)
+    }
+}
+
+// MARK: - API
+extension PostViewController {
+    func addPost(text: String) {
+        PostService.shared.addPost(text: text) { response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? BaseResponse<AddPostData> else { return }
+                guard let postRequestData = data.data else { return }
+                print(postRequestData)
+                print(postRequestData._id)
+            case .requestErr(let data):
+                print("request error")
+                print(data)
+            case .pathErr(let data):
+                print("path error")
+                print(data)
+            default:
+                print("DEBUG: Fail to get Posts.")
+                return
+            }
+        }
     }
 }
