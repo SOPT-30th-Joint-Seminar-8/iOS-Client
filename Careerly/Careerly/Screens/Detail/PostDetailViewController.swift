@@ -14,6 +14,7 @@ class PostDetailViewController: UIViewController {
     @IBOutlet weak var postTableView: UITableView!
     
     // MARK: - Vars & Lets Part
+    var model: Post?
     var commentData : [PostCommentModel] = []
     var postText : String?
     
@@ -25,6 +26,10 @@ class PostDetailViewController: UIViewController {
         registerNib()
         setUpDelegate()
         setTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
     }
     
     // MARK: - Custom Method Part
@@ -83,8 +88,8 @@ extension PostDetailViewController: UITableViewDataSource{
         switch indexPath.section{
         case 0:
             guard let cell = postTableView.dequeueReusableCell(withIdentifier: PostDetailTVC.identifier, for: indexPath) as? PostDetailTVC else { return UITableViewCell() }
-            
-            cell.setData(PostDetailModel(postText: postText ?? ""))
+            guard let model = model else { return UITableViewCell() }
+            cell.setData(model)
             return cell
         case 1:
             guard let cell = postTableView.dequeueReusableCell(withIdentifier: PostCommentTVC.identifier, for: indexPath) as? PostCommentTVC else { return UITableViewCell() }

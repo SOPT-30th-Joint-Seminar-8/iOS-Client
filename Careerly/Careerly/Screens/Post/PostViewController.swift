@@ -24,6 +24,10 @@ class PostViewController: UIViewController {
         setTextViewUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
+    }
+    
     // MARK: - Custom Method Part
     private func configureHeaderUI(){
         headerView.layer.shadowColor = UIColor.black.cgColor
