@@ -15,7 +15,7 @@ class PostDetailViewController: UIViewController {
     
     // MARK: - Vars & Lets Part
     var model: Post?
-    var commentData : [PostCommentModel] = []
+    var commentData : [CommentModel] = []
     var postText : String?
     
     // MARK: - Life Cycle Part
@@ -66,12 +66,9 @@ class PostDetailViewController: UIViewController {
     
     // MARK: - @IBAction Part
     @IBAction func submitBtnTap(_ sender: Any) {
-        guard let commentText = commentTextField.text else { return }
-        commentData.append(PostCommentModel(comment: commentText))
-        commentTextField.text?.removeAll()
-        postTableView.reloadData()
+        guard let commentText = commentTextField.text, let postId = model?.postId else { return }
+        postComment(postId: postId, contents: commentText)
     }
-    
 }
 
 // MARK: - Extension Part
@@ -100,4 +97,27 @@ extension PostDetailViewController: UITableViewDataSource{
         }
     }
     
+}
+
+//MARK: - API
+
+extension PostDetailViewController {
+    func postComment(postId: String, contents: String) {
+        CommentService.shared.postComment(postId: postId, contents: contents) { response in
+            switch response {
+            case .success(_):
+                self.commentData.append(CommentModel(postId: postId, text: contents))
+                self.commentTextField.text?.removeAll()
+                self.postTableView.reloadData()
+            case .requestErr(let data):
+                print(data)
+            case .pathErr(let data):
+                print(data)
+            case .serverErr:
+                print("Server Error")
+            case .networkFail:
+                print("Network Fail")
+            }
+        }
+    }
 }

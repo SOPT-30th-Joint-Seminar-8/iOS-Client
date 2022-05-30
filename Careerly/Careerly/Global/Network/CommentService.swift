@@ -1,40 +1,41 @@
 //
-//  PostService.swift
+//  CommentService.swift
 //  Careerly
 //
-//  Created by 안현주 on 2022/05/21.
+//  Created by User on 2022/05/31.
 //
-
 
 import Foundation
 import Alamofire
 
-/// 게시글 정보를 가져오기 위한 Service
-struct PostService {
-    static let shared = PostService()
+struct CommentService {
+    
+    static let shared = CommentService()
     
     private init() {}
     
-    // 게시글 전체 정보 가져오기
-    func getPosts(completion: @escaping(NetworkResult<Any>) -> Void) {
-        let url = APIConstants.getPostsURL
+    func postComment(postId: String, contents: String, completion: @escaping(NetworkResult<Any>) -> Void) {
+        let url = APIConstants.postCommentURL + "/\(postId)"
         let header: HTTPHeaders = ["Content-Type" : "application/json"]
+        let body: Parameters = [
+            "text": contents
+        ]
         
-        let dataRequest = AF.request(url, method: .get, encoding: URLEncoding.default, headers: header)
+        let dataReqeust = AF.request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header)
         
-        dataRequest.responseData { response in
+        dataReqeust.responseData { response in
             switch response.result {
             case .success:
                 guard let statusCode = response.response?.statusCode else { return }
                 guard let value = response.value else { return }
-                let networkResult = parseJSON(by: statusCode, data: value, type: PostData.self)
+                
+                let networkResult = parseJSON(by: statusCode, data: value, type: PostCommentModel.self)
                 completion(networkResult)
             case .failure:
                 completion(.networkFail)
             }
         }
     }
-    
     
     private func parseJSON<T: Codable> (by statusCode: Int, data: Data, type: T.Type) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
@@ -48,5 +49,4 @@ struct PostService {
         default: return .networkFail
         }
     }
-    
 }
