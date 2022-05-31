@@ -38,6 +38,8 @@ class HomeTabVC: UIViewController {
     func setDelegate() {
         tableView.delegate = self
         tableView.dataSource = self
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
     func configureTableView() {
@@ -108,19 +110,25 @@ extension HomeTabVC: UITableViewDataSource {
 
 extension HomeTabVC: TableViewHeaderViewDelegate {
     func showPostView() {
-        guard let postVC = UIStoryboard(name: "Post", bundle: nil).instantiateViewController(withIdentifier: "PostViewController") as? PostViewController else { return }
-        tabBarController?.tabBar.isHidden = true
+        guard let postVC = UIStoryboard(name: "Post", bundle: nil).instantiateViewController(withIdentifier: "PostViewController")
+                as? PostViewController
+        else { return }
         navigationController?.pushViewController(postVC, animated: true)
     }
 }
 
 extension HomeTabVC: FeedTVCDelegate {
-    func showPostDetailView() {
-        guard let postDetailVC = UIStoryboard(name: "PostDetail", bundle: nil).instantiateViewController(withIdentifier: "PostDetailViewController") as? PostDetailViewController else { return }
-        postDetailVC.postText = "sample text"
-        tabBarController?.tabBar.isHidden = true
+    func showPostDetailView(_ cell: FeedTVC) {
+        guard let postDetailVC = UIStoryboard(name: "PostDetail", bundle: nil).instantiateViewController(withIdentifier: "PostDetailViewController")
+                as? PostDetailViewController, let indexPathForModel = cell.indexPath
+        else { return }
+        postDetailVC.model = feedList[indexPathForModel]
         navigationController?.pushViewController(postDetailVC, animated: true)
     }
+}
+
+
+extension HomeTabVC: UIGestureRecognizerDelegate {
 }
  
 //MARK: - API
@@ -146,3 +154,4 @@ extension HomeTabVC {
         }
     }
 }
+
