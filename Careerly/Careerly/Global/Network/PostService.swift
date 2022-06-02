@@ -59,7 +59,7 @@ struct PostService {
         
     }
 
-    func parseJSON<T: Codable> (by statusCode: Int, data: Data, type: T.Type) -> NetworkResult<Any> {
+    private func parseJSON<T: Codable> (by statusCode: Int, data: Data, type: T.Type) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
 
         guard let decodedData = try? decoder.decode(BaseResponse<T>.self, from: data) else { return .pathErr("Decoding failed") }

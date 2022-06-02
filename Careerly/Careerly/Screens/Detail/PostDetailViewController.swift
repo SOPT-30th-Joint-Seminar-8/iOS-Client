@@ -14,7 +14,8 @@ class PostDetailViewController: UIViewController {
     @IBOutlet weak var postTableView: UITableView!
     
     // MARK: - Vars & Lets Part
-    var commentData : [PostCommentModel] = []
+    var model: Post?
+    var commentData : [CommentModel] = []
     var postText : String?
     
     // MARK: - Life Cycle Part
@@ -25,6 +26,10 @@ class PostDetailViewController: UIViewController {
         registerNib()
         setUpDelegate()
         setTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
     }
     
     // MARK: - Custom Method Part
@@ -61,12 +66,9 @@ class PostDetailViewController: UIViewController {
     
     // MARK: - @IBAction Part
     @IBAction func submitBtnTap(_ sender: Any) {
-        guard let commentText = commentTextField.text else { return }
-        commentData.append(PostCommentModel(comment: commentText))
-        commentTextField.text?.removeAll()
-        postTableView.reloadData()
+        guard let commentText = commentTextField.text, let postId = model?.postId else { return }
+        postComment(postId: postId, contents: commentText)
     }
-    
 }
 
 // MARK: - Extension Part
@@ -83,8 +85,8 @@ extension PostDetailViewController: UITableViewDataSource{
         switch indexPath.section{
         case 0:
             guard let cell = postTableView.dequeueReusableCell(withIdentifier: PostDetailTVC.identifier, for: indexPath) as? PostDetailTVC else { return UITableViewCell() }
-            
-            cell.setData(PostDetailModel(postText: postText ?? ""))
+            guard let model = model else { return UITableViewCell() }
+            cell.setData(model)
             return cell
         case 1:
             guard let cell = postTableView.dequeueReusableCell(withIdentifier: PostCommentTVC.identifier, for: indexPath) as? PostCommentTVC else { return UITableViewCell() }
@@ -95,4 +97,27 @@ extension PostDetailViewController: UITableViewDataSource{
         }
     }
     
+}
+
+//MARK: - API
+
+extension PostDetailViewController {
+    func postComment(postId: String, contents: String) {
+        CommentService.shared.postComment(postId: postId, contents: contents) { response in
+            switch response {
+            case .success(_):
+                self.commentData.append(CommentModel(postId: postId, text: contents))
+                self.commentTextField.text?.removeAll()
+                self.postTableView.reloadData()
+            case .requestErr(let data):
+                print(data)
+            case .pathErr(let data):
+                print(data)
+            case .serverErr:
+                print("Server Error")
+            case .networkFail:
+                print("Network Fail")
+            }
+        }
+    }
 }

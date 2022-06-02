@@ -19,5 +19,6 @@ struct APIConstants {
   static let getPostsURL = baseURL + "/post"
     /// 게시글 작성하기 위한 URL
   static let addPostURL = baseURL + "/post"
+    static let postCommentURL = baseURL + "/review/post"
 }
 

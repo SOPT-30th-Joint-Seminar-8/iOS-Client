@@ -8,7 +8,7 @@
 import UIKit
 
 protocol FeedTVCDelegate: AnyObject {
-    func showPostDetailView()
+    func showPostDetailView(_ cell: FeedTVC)
 }
 
 class FeedTVC: UITableViewCell {
@@ -58,6 +58,6 @@ class FeedTVC: UITableViewCell {
     
     // MARK: - @IBAction Part
     @IBAction func commentBtnTap(_ sender: UIButton) {
-        delegate?.showPostDetailView()
+        delegate?.showPostDetailView(self)
     }
 }

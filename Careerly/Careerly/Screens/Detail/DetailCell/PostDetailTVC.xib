@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -162,7 +162,14 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="emailLabel" destination="bfr-wz-Gd6" id="0Wo-lg-WzA"/>
+                <outlet property="likesCountImageView" destination="Lse-dw-X3Q" id="3LK-0C-mRP"/>
+                <outlet property="likesCountLabel" destination="hAC-x2-yc2" id="vyV-4H-Rc8"/>
                 <outlet property="postTextLabel" destination="iQB-mw-Ll0" id="OP6-4o-13i"/>
+                <outlet property="profileImageView" destination="UX3-sd-U9J" id="5fx-Uk-xov"/>
+                <outlet property="timeLabel" destination="Sza-9o-tph" id="Vwm-7W-zpN"/>
+                <outlet property="userNameLabel" destination="o5F-9b-Wze" id="JXl-iQ-BHH"/>
+                <outlet property="viewsLabel" destination="cEW-Ye-C8y" id="TZU-rc-xiZ"/>
             </connections>
             <point key="canvasLocation" x="135.38461538461539" y="92.417061611374407"/>
         </tableViewCell>

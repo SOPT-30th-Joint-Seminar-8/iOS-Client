@@ -22,7 +22,7 @@ class PostCommentTVC: UITableViewCell {
 
     }
     
-    func setData(_ data: PostCommentModel){
-        commentLabel.text = data.comment
+    func setData(_ data: CommentModel){
+        commentLabel.text = data.text
     }
 }
