@@ -47,4 +47,17 @@ class PostDetailTVC: UITableViewCell {
             likesCountImageView.image = UIImage(named: "Property 1=3")
         }
     }
+    
+    func setSampleData(_ data: PostDetailModel){
+        userNameLabel.text = "이소진"
+        postTextLabel.text = data.postText
+        if let imageURL = URL(string: "https://images.unsplash.com/photo-1541363111435-5c1b7d867904?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670") {
+            profileImageView.setImage(imageURL)
+        }
+        emailLabel.text = "aaaaa@gmail.com"
+        timeLabel.text = "2022-05-17T08:41:25.000Z".serverTimeToString(forUse: .forNotification)
+        likesCountLabel.text = "3명이 추천했어요"
+        viewsLabel.text = "조회 152"
+        likesCountImageView.image = UIImage(named: "Property 1=3")
+    }
 }

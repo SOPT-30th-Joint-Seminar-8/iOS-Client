@@ -85,8 +85,11 @@ extension PostDetailViewController: UITableViewDataSource{
         switch indexPath.section{
         case 0:
             guard let cell = postTableView.dequeueReusableCell(withIdentifier: PostDetailTVC.identifier, for: indexPath) as? PostDetailTVC else { return UITableViewCell() }
-            guard let model = model else { return UITableViewCell() }
-            cell.setData(model)
+            if let model = model {
+                cell.setData(model)
+            } else {
+                cell.setSampleData(PostDetailModel(postText: postText ?? ""))
+            }
             return cell
         case 1:
             guard let cell = postTableView.dequeueReusableCell(withIdentifier: PostCommentTVC.identifier, for: indexPath) as? PostCommentTVC else { return UITableViewCell() }
