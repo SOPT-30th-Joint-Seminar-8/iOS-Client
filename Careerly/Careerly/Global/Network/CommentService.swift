@@ -28,14 +28,36 @@ struct CommentService {
             case .success:
                 guard let statusCode = response.response?.statusCode else { return }
                 guard let value = response.value else { return }
-                
+                print("댓글 작성 성공")
                 let networkResult = parseJSON(by: statusCode, data: value, type: PostCommentModel.self)
                 completion(networkResult)
             case .failure:
+                print("댓글 작성 실패")
                 completion(.networkFail)
             }
         }
     }
+    
+    func getComment(postId: String, completion: @escaping(NetworkResult<Any>) -> Void) {
+            let url = APIConstants.getPostCommentURL + postId
+            let header: HTTPHeaders = ["Content-Type" : "application/json"]
+            
+            let dataRequest = AF.request(url, method: .get, encoding: URLEncoding.default, headers: header)
+            
+            dataRequest.responseData { response in
+                switch response.result {
+                case .success:
+                    guard let statusCode = response.response?.statusCode else { return }
+                    guard let value = response.value else { return }
+                    print(statusCode)
+                    let networkResult = parseJSON(by: statusCode, data: value, type: [Comment].self)
+                    
+                    completion(networkResult)
+                case .failure:
+                    completion(.networkFail)
+                }
+            }
+        }
     
     private func parseJSON<T: Codable> (by statusCode: Int, data: Data, type: T.Type) -> NetworkResult<Any> {
         let decoder = JSONDecoder()

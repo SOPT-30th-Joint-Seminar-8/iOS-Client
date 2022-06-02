@@ -14,3 +14,17 @@ struct PostCommentModel: Codable {
         case id = "_id"
     }
 }
+
+struct Comment: Codable {
+    let reviewID: String
+    let userName: String
+    let userEmail: String
+    let userImg: String
+    let text: String
+    let createdAt: String
+
+    enum CodingKeys: String, CodingKey {
+        case reviewID = "reviewId"
+        case userName, userEmail, userImg, text, createdAt
+    }
+}

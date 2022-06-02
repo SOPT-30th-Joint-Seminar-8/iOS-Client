@@ -17,6 +17,7 @@ class PostDetailViewController: UIViewController {
     var model: Post?
     var commentData : [CommentModel] = []
     var postText : String?
+    var postId: String?
     
     // MARK: - Life Cycle Part
     override func viewDidLoad() {
@@ -26,6 +27,10 @@ class PostDetailViewController: UIViewController {
         registerNib()
         setUpDelegate()
         setTableView()
+        getComment() { comments in
+            print("helllllo")
+            print(comments!)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,9 +70,13 @@ class PostDetailViewController: UIViewController {
     }
     
     // MARK: - @IBAction Part
-    @IBAction func submitBtnTap(_ sender: Any) {
-        guard let commentText = commentTextField.text, let postId = model?.postId else { return }
-        postComment(postId: postId, contents: commentText)
+    @IBAction func submitBtnTap(_ sender: Any) -> Void {
+        guard let commentText = commentTextField.text else { return }
+        if let postId = model?.postId {
+            postComment(postId: postId, contents: commentText)
+        } else {
+            postComment(postId: self.postId ?? "", contents: commentText)
+        }
     }
 }
 
@@ -121,6 +130,28 @@ extension PostDetailViewController {
             case .networkFail:
                 print("Network Fail")
             }
+        }
+    }
+    
+    func getComment(completion: @escaping([Comment]?) -> Void) {
+        CommentService.shared.getComment(postId: self.postId ?? ""){ response in
+            switch response {
+            case .success(let data):
+                print("success")
+                if let comments = data as? BaseResponse<[Comment]> {
+                    completion(comments.data)
+                } else {
+                    completion([])
+                }
+                return
+            case .requestErr(let data):
+                print(data)
+            case .pathErr(let data):
+                print(data)
+            default:
+                print("DEBUG: Fail to get comments.")
+            }
+            completion(nil)
         }
     }
 }
