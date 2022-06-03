@@ -112,7 +112,9 @@ extension PostViewController {
         guard let postDetailVC = storyboard?.instantiateViewController(identifier: "PostDetailViewController") as? PostDetailViewController else {return}
         
         postDetailVC.modalPresentationStyle = .fullScreen
+        postDetailVC.writeBool = true
         postDetailVC.postText = self.postTextView.text
+        
         print(self.postTextView.text)
         self.present(postDetailVC, animated: true)
       case .requestErr(let data):
