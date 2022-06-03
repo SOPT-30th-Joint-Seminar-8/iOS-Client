@@ -11,4 +11,3 @@ struct PostDetailModel{
     var postText :String
 }
 
-

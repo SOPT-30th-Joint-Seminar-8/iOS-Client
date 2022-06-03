@@ -47,4 +47,9 @@ class PostDetailTVC: UITableViewCell {
             likesCountImageView.image = UIImage(named: "Property 1=3")
         }
     }
+  
+  func setWriteData(_ data: PostDetailModel){
+    postTextLabel.text = data.postText
+  }
+  
 }
