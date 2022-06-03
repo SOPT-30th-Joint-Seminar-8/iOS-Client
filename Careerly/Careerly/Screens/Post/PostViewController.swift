@@ -117,6 +117,7 @@ extension PostViewController {
         
         print(self.postTextView.text)
         self.present(postDetailVC, animated: true)
+
       case .requestErr(let data):
         print("requestERR")
       case .pathErr(let data):

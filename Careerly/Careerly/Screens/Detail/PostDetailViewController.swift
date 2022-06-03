@@ -17,7 +17,7 @@ class PostDetailViewController: UIViewController {
   var model: Post?
   var commentData : [CommentModel] = []
   var postText : String?
-  var writeBool: Bool
+  var writeBool: Bool?
   
   
   // MARK: - Life Cycle Part
@@ -31,16 +31,11 @@ class PostDetailViewController: UIViewController {
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    setBool()
     tabBarController?.tabBar.isHidden = true
-    print(postText)
   }
   
   // MARK: - Custom Method Part
-  private func setBool() {
-    writeBool = false
-  }
-  
+
   private func registerNib(){
     let postNib = UINib(nibName: PostDetailTVC.identifier, bundle: nil)
     postTableView.register(postNib, forCellReuseIdentifier: PostDetailTVC.identifier)
@@ -94,11 +89,14 @@ extension PostDetailViewController: UITableViewDataSource{
     case 0:
       if writeBool == true {
         guard let cell = postTableView.dequeueReusableCell(withIdentifier: PostDetailTVC.identifier, for: indexPath) as? PostDetailTVC else { return UITableViewCell() }
+        cell.setWriteData(PostDetailModel(postText: postText ?? ""))
+        return cell
+      } else {
+        guard let cell = postTableView.dequeueReusableCell(withIdentifier: PostDetailTVC.identifier, for: indexPath) as? PostDetailTVC else { return UITableViewCell() }
+        guard let model = model else { return UITableViewCell() }
+        cell.setData(model)
+        return cell
       }
-      guard let cell = postTableView.dequeueReusableCell(withIdentifier: PostDetailTVC.identifier, for: indexPath) as? PostDetailTVC else { return UITableViewCell() }
-      guard let model = model else { return UITableViewCell() }
-      cell.setData(model)
-      return cell
     case 1:
       guard let cell = postTableView.dequeueReusableCell(withIdentifier: PostCommentTVC.identifier, for: indexPath) as? PostCommentTVC else { return UITableViewCell() }
       cell.setData(commentData[indexPath.row])
@@ -109,6 +107,7 @@ extension PostDetailViewController: UITableViewDataSource{
   }
   
 }
+
 
 //MARK: - API
 

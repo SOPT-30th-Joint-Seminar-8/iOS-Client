@@ -48,20 +48,8 @@ class PostDetailTVC: UITableViewCell {
         }
     }
   
-  func setWriteData(_ data: Post){
-      userNameLabel.text = data.userName
-      postTextLabel.text = data.text
-      if let imageURL = URL(string: data.userImg) {
-          profileImageView.setImage(imageURL)
-      }
-      emailLabel.text = data.userEmail
-      timeLabel.text = data.createdAt.serverTimeToString(forUse: .forNotification)
-      likesCountLabel.text = "\(data.likes)명이 추천했어요"
-      viewsLabel.text = "조회 \(data.views)"
-      
-      if data.likes >= 3 {
-          likesCountImageView.image = UIImage(named: "Property 1=3")
-      }
+  func setWriteData(_ data: PostDetailModel){
+    postTextLabel.text = data.postText
   }
   
 }
