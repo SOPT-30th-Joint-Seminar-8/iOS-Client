@@ -19,5 +19,7 @@ struct APIConstants {
     static let getPostsURL = baseURL + "/post"
     static let postCommentURL = baseURL + "/review/post"
     static let postWriteURL = baseURL + "/post"
+    static let getCommentURL = baseURL + "/review/post"
+
 }
 
