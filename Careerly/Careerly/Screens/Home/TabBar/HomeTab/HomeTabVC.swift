@@ -123,6 +123,7 @@ extension HomeTabVC: FeedTVCDelegate {
                 as? PostDetailViewController, let indexPathForModel = cell.indexPath
         else { return }
         postDetailVC.model = feedList[indexPathForModel]
+        postDetailVC.postId = feedList[indexPathForModel].postId
         navigationController?.pushViewController(postDetailVC, animated: true)
     }
 }
