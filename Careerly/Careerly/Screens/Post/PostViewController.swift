@@ -14,13 +14,13 @@ class PostViewController: UIViewController {
     @IBOutlet weak var postTextView: UITextView!
     @IBOutlet weak var footerView: UIView!
     @IBOutlet weak var successBtn: UIButton!
+    var postId: String?
     
     // MARK: - Life Cycle Part
     override func viewDidLoad() {
         super.viewDidLoad()
         configureHeaderUI()
         postTextView.delegate = self
-//        addKeyboardNotification()
         setTextViewUI()
     }
     
@@ -43,54 +43,10 @@ class PostViewController: UIViewController {
         postTextView.textContainerInset = UIEdgeInsets(top: 15, left: 10, bottom: 15, right: 10);
     }
     
-    private func addKeyboardNotification() {
-        NotificationCenter.default.addObserver(
-          self,
-          selector: #selector(keyboardWillShow),
-          name: UIResponder.keyboardWillShowNotification,
-          object: nil
-        )
-        
-        NotificationCenter.default.addObserver(
-          self,
-          selector: #selector(keyboardWillHide),
-          name: UIResponder.keyboardWillHideNotification,
-          object: nil
-        )
-      }
-    
-    @objc private func keyboardWillShow(_ notification: Notification) {
-      if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-        let keybaordRectangle = keyboardFrame.cgRectValue
-        let keyboardHeight = keybaordRectangle.height
-          print("키보드의 높이: \(keyboardHeight)")
-          print("footerView의 높이(변경전) : \(footerView.frame.origin.y)")
-        footerView.frame.origin.y -= keyboardHeight
-          print("footerView의 높이 : \(footerView.frame.origin.y)")
-      }
-    }
-    
-    @objc private func keyboardWillHide(_ notification: Notification) {
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keybaordRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keybaordRectangle.height
-            footerView.frame.origin.y += keyboardHeight
-        }
-    }
-    
     // MARK: - @IBAction Part
     @IBAction func successBtnTap(_ sender: Any) {
         guard let text = postTextView.text else { return }
         addPost(text: text)
-        
-        let storyboard: UIStoryboard? = UIStoryboard(name: "PostDetail", bundle: Bundle.main)
-        guard let postDetailVC = storyboard?.instantiateViewController(identifier: "PostDetailViewController") as? PostDetailViewController else {
-            return
-        }
-        
-        postDetailVC.modalPresentationStyle = .fullScreen
-        postDetailVC.postText = postTextView.text
-        self.present(postDetailVC, animated: true)
     }
     
     @IBAction func backBtnTap(_ sender: UIButton) {
@@ -113,16 +69,23 @@ extension PostViewController {
             case .success(let data):
                 guard let data = data as? BaseResponse<AddPostData> else { return }
                 guard let postRequestData = data.data else { return }
-                print(postRequestData)
-                print(postRequestData._id)
+
+                self.postId = postRequestData._id
+                let storyboard: UIStoryboard? = UIStoryboard(name: "PostDetail", bundle: Bundle.main)
+                guard let postDetailVC = storyboard?.instantiateViewController(identifier: "PostDetailViewController") as? PostDetailViewController else {
+                    return
+                }
+                
+                postDetailVC.modalPresentationStyle = .fullScreen
+                postDetailVC.postText = self.postTextView.text
+                postDetailVC.postId = self.postId
+                self.present(postDetailVC, animated: true)
             case .requestErr(let data):
-                print("request error")
                 print(data)
             case .pathErr(let data):
-                print("path error")
                 print(data)
             default:
-                print("DEBUG: Fail to get Posts.")
+                print("DEBUG: Fail to add Posts.")
                 return
             }
         }
