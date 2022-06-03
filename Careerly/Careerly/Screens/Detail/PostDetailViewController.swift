@@ -15,9 +15,11 @@ class PostDetailViewController: UIViewController {
     
     // MARK: - Vars & Lets Part
     var model: Post?
-    var commentData : [CommentModel] = []
     var postText : String?
     var postId: String?
+    var comments: [Comment] = [] { 
+        didSet { postTableView.reloadData() }
+    }
     
     // MARK: - Life Cycle Part
     override func viewDidLoad() {
@@ -27,10 +29,7 @@ class PostDetailViewController: UIViewController {
         registerNib()
         setUpDelegate()
         setTableView()
-        getComment() { comments in
-            print("helllllo")
-            print(comments!)
-        }
+        getComment()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,8 +73,12 @@ class PostDetailViewController: UIViewController {
         guard let commentText = commentTextField.text else { return }
         if let postId = model?.postId {
             postComment(postId: postId, contents: commentText)
+            getComment()
+            self.postTableView.reloadData()
         } else {
             postComment(postId: self.postId ?? "", contents: commentText)
+            getComment()
+            self.postTableView.reloadData()
         }
     }
 }
@@ -87,7 +90,7 @@ extension PostDetailViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 1 : commentData.count
+        return section == 0 ? 1 : comments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -102,7 +105,7 @@ extension PostDetailViewController: UITableViewDataSource{
             return cell
         case 1:
             guard let cell = postTableView.dequeueReusableCell(withIdentifier: PostCommentTVC.identifier, for: indexPath) as? PostCommentTVC else { return UITableViewCell() }
-            cell.setData(commentData[indexPath.row])
+            cell.setData(comments[indexPath.row])
             return cell
         default:
             return UITableViewCell()
@@ -118,9 +121,7 @@ extension PostDetailViewController {
         CommentService.shared.postComment(postId: postId, contents: contents) { response in
             switch response {
             case .success(_):
-                self.commentData.append(CommentModel(postId: postId, text: contents))
                 self.commentTextField.text?.removeAll()
-                self.postTableView.reloadData()
             case .requestErr(let data):
                 print(data)
             case .pathErr(let data):
@@ -133,17 +134,13 @@ extension PostDetailViewController {
         }
     }
     
-    func getComment(completion: @escaping([Comment]?) -> Void) {
+    func getComment(){
         CommentService.shared.getComment(postId: self.postId ?? ""){ response in
             switch response {
             case .success(let data):
-                print("success")
-                if let comments = data as? BaseResponse<[Comment]> {
-                    completion(comments.data)
-                } else {
-                    completion([])
-                }
-                return
+                guard let data = data as? BaseResponse<[Comment]> else { return }
+                guard let commentData = data.data else { return }
+                self.comments = commentData
             case .requestErr(let data):
                 print(data)
             case .pathErr(let data):
@@ -151,7 +148,7 @@ extension PostDetailViewController {
             default:
                 print("DEBUG: Fail to get comments.")
             }
-            completion(nil)
         }
     }
+
 }

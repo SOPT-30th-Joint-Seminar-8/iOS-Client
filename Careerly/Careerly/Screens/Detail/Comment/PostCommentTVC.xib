@@ -106,6 +106,9 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="commentLabel" destination="faX-06-LC6" id="PtP-D5-WRE"/>
+                <outlet property="userEmailLabel" destination="2I3-8T-Uj5" id="vZ5-dJ-nYH"/>
+                <outlet property="userImage" destination="bku-AM-sLk" id="X6C-7R-bLL"/>
+                <outlet property="userNameLabel" destination="CPu-9Q-IvK" id="Cfy-mp-dPi"/>
             </connections>
             <point key="canvasLocation" x="138.40579710144928" y="17.745535714285712"/>
         </tableViewCell>

@@ -10,6 +10,9 @@ import UIKit
 class PostCommentTVC: UITableViewCell {
 
     @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userEmailLabel: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
     static let identifier = "PostCommentTVC"
     
     override func awakeFromNib() {
@@ -21,7 +24,16 @@ class PostCommentTVC: UITableViewCell {
 
     }
     
-    func setData(_ data: CommentModel){
+//    func setData(_ data: CommentModel){
+//        commentLabel.text = data.text
+//    }
+    
+    func setData(_ data: Comment){
         commentLabel.text = data.text
+        userNameLabel.text = data.userName
+        userEmailLabel.text = data.userEmail
+        if let imageURL = URL(string: data.userImg) {
+            userImage.setImage(imageURL)
+        }
     }
 }
