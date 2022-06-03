@@ -9,6 +9,8 @@ import UIKit
 
 class PostViewController: UIViewController {
   
+  let postId : String? = nil
+  
   // MARK: - @IBOutlet Part
   @IBOutlet weak var headerView: UIView!
   @IBOutlet weak var postTextView: UITextView!

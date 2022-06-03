@@ -36,6 +36,26 @@ struct CommentService {
             }
         }
     }
+  
+  //postid를 줘여함..!
+  func getComments(postId: String, completion: @escaping(NetworkResult<Any>) -> Void) {
+      let url = APIConstants.getCommentURL + "/\(postId)"
+      let header: HTTPHeaders = ["Content-Type" : "application/json"]
+
+      let dataRequest = AF.request(url, method: .get, encoding: JSONEncoding.default, headers: header)
+      
+      dataRequest.responseData { response in
+          switch response.result {
+          case .success:
+              guard let statusCode = response.response?.statusCode else { return }
+              guard let value = response.value else { return }
+            let networkResult = parseJSON(by: statusCode, data: value, type: GetCommentModel.self)
+              completion(networkResult)
+          case .failure:
+              completion(.networkFail)
+          }
+      }
+  }
     
     private func parseJSON<T: Codable> (by statusCode: Int, data: Data, type: T.Type) -> NetworkResult<Any> {
         let decoder = JSONDecoder()

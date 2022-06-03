@@ -20,9 +20,11 @@ class PostDetailViewController: UIViewController {
   var writeBool: Bool?
   
   
+  
   // MARK: - Life Cycle Part
   override func viewDidLoad() {
     super.viewDidLoad()
+    addNotiObserver()
     configureUI()
     setUpTextField()
     registerNib()
@@ -31,10 +33,16 @@ class PostDetailViewController: UIViewController {
   }
   
   override func viewWillAppear(_ animated: Bool) {
+    //postid
     tabBarController?.tabBar.isHidden = true
   }
   
   // MARK: - Custom Method Part
+  private func addNotiObserver(){
+    print("된건가4")
+    NotificationCenter.default.addObserver(self, selector: #selector(getPostID), name: Notification.Name("notiData"), object: nil)
+    print("된건가 최종")
+  }
 
   private func registerNib(){
     let postNib = UINib(nibName: PostDetailTVC.identifier, bundle: nil)
@@ -72,6 +80,16 @@ class PostDetailViewController: UIViewController {
     guard let commentText = commentTextField.text, let postId = model?.postId else { return }
     postComment(postId: postId, contents: commentText)
   }
+  
+  
+  @objc func getPostID(notification : NSNotification){
+    print("된건가5")
+      if let text = notification.object as? String{
+        print("된건가6")
+        getComments(postId: text)
+        
+      }
+    }
 }
 
 // MARK: - Extension Part
@@ -130,4 +148,34 @@ extension PostDetailViewController {
       }
     }
   }
+  
+  func getComments(postId:String) {
+    CommentService.shared.getComments(postId: postId) { response in
+      switch response {
+      case .success(let data):
+          guard let data = data as? BaseResponse<GetCommentModel> else { return }
+          guard let getData = data.data else { return }
+          
+        print("되는건가2")
+        //아마 데이터 연달아서 올거라 반복문써서 append 해야할거임..!
+        let postId = postId
+        let text = getData.text
+        
+        self.commentData.append(CommentModel(postId: postId, text: text))
+        self.commentTextField.text?.removeAll()
+        print("되는건가10")
+        self.postTableView.reloadData()
+        
+      case .requestErr(let data):
+        print(data)
+      case .pathErr(let data):
+        print(data)
+      case .serverErr:
+        print("Server Error")
+      case .networkFail:
+        print("Network Fail")
+      }
+    }
+  }
 }
+  

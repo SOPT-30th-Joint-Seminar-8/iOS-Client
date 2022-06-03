@@ -58,6 +58,13 @@ class FeedTVC: UITableViewCell {
     
     // MARK: - @IBAction Part
     @IBAction func commentBtnTap(_ sender: UIButton) {
-        delegate?.showPostDetailView(self)
+        
+      NotificationCenter.default.post(name: NSNotification.Name("notiData"),object:model?.postId)
+      print("된건가1")
+      DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+        // 1초 후 실행될 부분
+        print("된건가3")
+        self.delegate?.showPostDetailView(self)
+      }
     }
 }
